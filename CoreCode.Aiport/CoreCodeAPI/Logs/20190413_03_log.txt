@@ -1,0 +1,125 @@
+
+Log Entry : 3:01:42 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:02:09 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:05:04 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:07:07 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:08:47 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:15:32 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:16:16 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:17:08 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:19:14 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:19:51 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:26:26 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:34:37 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:35:05 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:37:10 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:38:36 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:42:10 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:53:43 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:53:46 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:54:17 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:54:24 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:55:00 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:55:10 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:55:19 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:57:14 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 3:59:23 AM Saturday, April 13, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------

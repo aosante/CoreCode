@@ -1,0 +1,34 @@
+﻿
+
+@{
+    ViewBag.Title = "Solicitudes de aerolíneas";
+}
+
+@section pageCss{
+    <link rel="stylesheet" href="~/Scripts/TableHide.css" />
+}
+<h2>Solicitudes de aerolíneas</h2>
+<section>
+    <table id="tblAirline">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Año creación</th>
+                <th>Descripción</th>
+                <th>Email</th>
+                <th>Respuesta</th>
+            </tr>
+        <tbody></tbody>
+
+    </table>
+
+</section>
+
+
+
+@section scripts{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/ApiService.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/Request/RequestList.js"></script>
+}

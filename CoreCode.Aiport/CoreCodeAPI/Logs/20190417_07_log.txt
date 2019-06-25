@@ -1,0 +1,30 @@
+
+Log Entry : 7:35:55 PM Wednesday, April 17, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 7:35:55 PM Wednesday, April 17, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 7:43:30 PM Wednesday, April 17, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 7:43:30 PM Wednesday, April 17, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 7:59:49 PM Wednesday, April 17, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 7:59:49 PM Wednesday, April 17, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------

@@ -1,0 +1,50 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport CoreCode</title>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <!--<link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />-->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+    <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/GeneralLayout.css" rel="stylesheet" />
+    @RenderSection("pageCss", false)
+    
+</head>
+<body>
+    <div class="mainContainer">
+       
+                <li id="faq-nav" class="nav-item">
+                    <a class="nav-link active" href="#">FAQ</a>
+                </li>
+                <li id="airline-register-nav" class="nav-item">
+                    <a class="nav-link active" href="#">REGISTRAR AEROLÍNEA</a>
+                </li>
+        @RenderBody()
+        <hr />
+      @*  <footer>
+            <div class="container">
+                <!-- Logo -->
+                <a class="logo" href="#">
+                    <img src="~/Resources/img/logo-light.png" alt="logo">
+                </a>
+
+                <p><a href="#">Hecho con ❤ por CodeCore</a></p>
+            </div>
+            <div class="curve curve-top curve-center"></div>
+        </footer> *@
+    </div>
+@* @Scripts.Render("~/bundles/jquery") *@
+@*@Scripts.Render("~/bundles/bootstrap")*@
+<script src="~/Scripts/CoreCodeScripts/userSession.js"></script>
+@RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+
+@{
+    ViewBag.Title = "Registrando aeropuerto";
+}
+
+@section pageCss{
+    <link rel="stylesheet" href="~/Scripts/TableHide.css" />
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script src="~/Scripts/Views/ControlActions.js"></script>
+<script src="~/Scripts/Views/vCreateAirports.js"></script>
+@{
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+
+<form id="frmEdition" class="main-right-content-container">
+    <div style="margin: 0 auto; width: 30%;">
+        <h2>Registro de aeropuerto </h2>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            @Html.GetInputWithLabel("txtName", "text", "Nombre:*", "form-control", "Ingrese nombre del aeropuerto", "Name", true)
+
+        </div>
+        <div class="form-group col-md-4">
+            @Html.GetInputWithLabel("txtPhone", "tel", "Teléfono:*", "form-control", "Ingrese número de contacto", "Phone", true)
+        </div>
+        <div class="form-group col-md-4">
+            @Html.GetInputWithLabel("txtZipCode", "number", "Código Postal:*", "form-control", "Ingrese código postal", "ZipCode", true)
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            @Html.GetInputWithLabel("txtGateTariff", "number", "Costo por uso de puerta:*", "form-control", "Cifra en dólares $", "GateTariff", true)
+        </div>
+        <div class="form-group col-md-4">
+            @Html.GetInputWithLabel("txtRunwayTariff", "number", "Costo por uso de pista:*", "form-control", "Cifra en dólares $", "RunwayTariff", true)
+        </div>
+        <div class="form-group col-md-4">
+            @Html.GetInputWithLabel("txtTax", "number", "Costo de impuesto:*", "form-control", "Cifra en dólares $", "Tax", true)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.GetInputWithLabel("txtAddress", "text", "Dirección:*", "form-control", "Mover marcador en el mapa para seleccionar dirección", "Address", true)
+      
+        <div id="coordenates" class="form-row" style="display: none">
+            <div class="form-group col-md-6">
+                @Html.GetInputWithLabel("coordenadaX", "text", "Latitud", "form-control", "", "Latitude", true)
+            </div>
+            <div class="form-group col-md-6">
+                @Html.GetInputWithLabel("coordenadaY", "text", "Longitud", "form-control", "", "Longitude", true)
+            </div>
+        </div>
+    </div>
+   
+</form>
+<form class="main-right-content-container">
+
+    <div id="mapa" class="mapa" style="width: 100%; height: 200px;"></div>
+    <div style="display: none">
+        <b>Instrucciones de uso:</b>
+        <div id="statusMarcador">
+            <i>Mueva el marcador.</i>
+        </div>
+        <b>Posición actual:</b>
+
+    </div>
+    <div class="form-group col-md-6">
+        @Html.GetInputWithLabel("nbmGates", "number", "Cantidad de puertas:*", "form-control", "Ingrese cantidad inicial de puertas", "", true)
+    </div>
+    <div id="btnControl">
+
+        @Html.GetConfirmButton("btnRegisterAirport", "Create", "vCreateAirports", "", "Siguiente")
+        @Html.GetConfirmButton("btnClean", "CleanForm", "vCreateAirports", "", "Limpiar")
+    </div>
+
+</form>
+
+
+
+
+

@@ -1,0 +1,96 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+@using CoreCode.Web.UI.Models.HtmlComponents
+
+
+@section pageCss{
+    <link rel="stylesheet" href="~/Scripts/TableHide.css" />
+}
+
+
+<script src="~/Scripts/Views/ControlActions.js"></script>
+<script src="~/Scripts/Views/vListAirlinesRequest.js"></script>
+@{
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+
+<div id="DropdownAndTable" style="margin: 0 auto; width: 98%" ;>
+
+
+
+    @Html.GetSelectDropdown("statusFilter", "vListAirlinesRequest", "AirlineRequestStatusDropdownChange", "", "", 
+        new Dictionary<string, string> { { "Aerolíneas en espera",  "waiting" },
+            { "Aerolíneas aceptadas",  "accepted" }, {"Aerolíneas rechazadas",  "rejected" } })
+
+    @Html.GetTable("tblAirlineRequest", "vListAirlinesRequest", "BindFields", "", new List<string> { "Id", "Comercial_name", "Business_name", "FormattedYear", "Description", "Email" },
+            new List<string> { "Cédula jurídica", "Nombre comercial", "Nombre de negocio", "Año de fundación", "Descripción", "Correo" })
+
+
+</div>
+
+<div class="card border-secondary" style="margin: 0 auto; width: 98%">
+    <div class="card-header">
+        <div class="row pull-right">
+            <div class="col-md-8">Información de aerolínea</div>
+            <div class="col-md-4">
+                @Html.GetConfirmButton("btnAccept", "Accept", "vListAirlinesRequest", "", "Aprobar")
+                @Html.GetConfirmButton("btnEdit", "Update", "vListAirlinesRequest", "", "Modificar")
+                @Html.GetConfirmButton("btnAdmin", "ShowAdmin", "vListAirlinesRequest", "", "Ver administrador")
+                @Html.GetConfirmButton("btnReject", "Reject", "vListAirlinesRequest", "", "Rechazar")
+                @Html.GetConfirmButton("btnClean", "CleanForm", "vListAirlinesRequest", "", "Limpiar")
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="bs-component">
+
+
+                    <form id="frmEdition" class="main-right-content-container">
+                        <div style="margin: 0 auto; width: 30%;">
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+
+                                @Html.GetInputWithLabel("txtId", "text", "Cédula jurídica:*", "form-control", "", "Id", true)
+
+                            </div>
+
+                            <div class="form-group col-md-6">
+
+                                @Html.GetInputWithLabel("txtComercialName", "text", "Nombre comercial:*", "form-control", "", "Comercial_name", true)
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                @Html.GetInputWithLabel("txtBusinessName", "text", "Nombre de negocio:*", "form-control", "", "Business_name", true)
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.GetInputWithLabel("txtCreationYear", "date", "Año de fundación:*", "form-control", "", "FormattedYear", true)
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                @Html.GetInputWithLabel("txtDescription", "text", "Descripción:*", "form-control", "", "Description", true)
+
+                            </div>
+                            <div class="col-md-6">
+                                @Html.GetInputWithLabel("txtEmail", "text", "Correo electrónico:*", "form-control", "", "Email", true)
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

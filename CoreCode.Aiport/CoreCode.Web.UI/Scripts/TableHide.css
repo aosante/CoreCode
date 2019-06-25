@@ -1,0 +1,30 @@
+﻿.hide {
+    display: none;
+}
+
+.input-error {
+    border: 0.125em solid #c0392b !important;
+}
+
+
+.sectionPic {
+    width: 25%;
+    float: right !important;
+}
+
+
+.mapa {
+    height: 30vh;
+    width: 95%;
+}
+
+.displayblock{
+    display:block;
+}
+.scrollinAirportList  {
+    display: block;
+    overflow: auto;
+    height: 270px;
+    width: 100%;
+
+}

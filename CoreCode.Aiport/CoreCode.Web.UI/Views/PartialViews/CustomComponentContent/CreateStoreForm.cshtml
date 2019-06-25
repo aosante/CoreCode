@@ -1,0 +1,43 @@
+﻿<h2>Modificando tienda</h2>
+
+<section>
+    <div>
+        <h2>
+            Datos de tienda
+        </h2>
+    </div>
+
+    <div>
+        <select id="selectAirportEdit" type="text" placeholder="Aeropuerto:" required>
+            <option value="">Seleccione aeropuerto</option>
+        </select>
+    </div>
+ 
+    <div>
+        <input type="text" id="txtNameEdit" placeholder="Nombre de la tienda:" required>
+    </div>
+    <div>
+        <select id="selectCategory" type="text" placeholder="Categoría:" required>
+            <option value="">Seleccione categoría</option>
+        </select>
+    </div>
+    <div>
+        <input type="text" id="txtManagerNameEdit" placeholder="Nombre del administrador:" required>
+    </div>
+    <div>
+        <input type="text" id="txtPhoneEdit" placeholder="Teléfono de la tienda:" required>
+    </div> <div>
+        <input type="number" id="nbmRentEdit" placeholder="Costo de renta:" required>
+    </div>
+
+
+    <div id="btnControl">
+        <button type="button" id="btnEditStore">Modificar</button>
+        <button type="button" id="btnEditCancel">Cancelar</button>
+    </div>
+</section>
+@section scripts{
+    <script src="~/Scripts/CoreCodeScripts/ApiService.js"></script>
+    @*<script src="~/Scripts/CoreCodeScripts/Stores/StoreEdit.js"></script>*@
+
+}

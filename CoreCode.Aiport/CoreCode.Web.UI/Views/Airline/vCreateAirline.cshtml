@@ -1,0 +1,76 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+
+@{
+    ViewBag.Title = "Registrando aerolinea";
+}
+
+@section pageCss{
+    <link rel="stylesheet" href="~/Scripts/TableHide.css" />
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script src="~/Scripts/Views/ControlActions.js"></script>
+<script src="~/Scripts/Views/vCreateAirline.js"></script>
+@{
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+
+
+<form id="frmEdition"  class="main-right-content-container">
+    <div style="margin: 0 auto; width: 30%;">
+        <h2>Registro de aerolínea</h2>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+
+            @Html.GetInputWithLabel("txtId", "text", "Cédula jurídica:*", "form-control", "(Obligatorio)", "ID", true)
+
+        </div>
+
+        <div class="form-group col-md-6">
+
+            @Html.GetInputWithLabel("txtComercialName", "text", "Nombre comercial:*", "form-control", "(Obligatorio)", "COMERCIAL_NAME", true)
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("txtBusinessName", "text", "Nombre de negocio:*", "form-control", "(Obligatorio)", "BUSINESS_NAME", true)
+
+        </div>
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("txtCreationYear", "date", "Año de fundación:*", "form-control", "(Obligatorio)", "CREATION_YEAR", true)
+            <label>        *La fecha tiene que ser anterior al día de hoy</label>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("txtDescription", "text", "Descripción:*", "form-control", "(Obligatorio)", "DESCRIPTION", true)
+
+        </div>
+        <div class="col-md-6">
+            @Html.GetInputWithLabel("txtEmail", "email", "Correo electrónico:*", "form-control", "(Obligatorio)", "EMAIL", true)
+
+        </div>
+    </div>
+   
+</form>
+
+<form class="main-right-content-container">
+
+    <div id="btnControl">
+
+        @Html.GetConfirmButton("btnRegisterAirline", "Create", "vCreateAirline", "", "Siguiente")
+        @Html.GetConfirmButton("btnClean", "CleanForm", "vCreateAirline", "", "Limpiar")
+    </div>
+
+</form>
+
+
+
+
+

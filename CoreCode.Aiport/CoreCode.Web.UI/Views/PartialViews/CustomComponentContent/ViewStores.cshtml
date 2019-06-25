@@ -1,0 +1,74 @@
+﻿
+@using CoreCode.Web.UI.Models.Helpers
+<div id="view-stores-container">
+    <section>
+        <section>
+            <div>
+                <h2>
+                    Listado general de tiendas
+                </h2>
+            </div>
+            <div>
+                <div id="btnControl">
+                    <button type="button" id="btnRegisterStore">Registrar tienda</button>
+                </div>
+                <div>
+                    @Html.GetSelectDropdown("statusFilter", "", "", "", "", new Dictionary<string, string> { { "Tiendas habilitadas", "true" }, { "Tiendas deshabilitadas", "false" } })
+                    @*<select id="statusFilter">
+                            <option selected value="true">Tiendas habilitadas</option>
+                            <option value="false">Tiendas deshabilitadas</option>
+                        </select>*@
+
+                </div>
+                <div>
+                    <select id="selectAirport"></select>
+                </div>
+                <div>
+                </div>
+                <div>
+                    <input type="text" id="txtFilter" placeholder="Buscar por código o nombre:">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <table id="tblStore">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Administrador</th>
+                        <th>Teléfono</th>
+                        <th>Costo renta</th>
+                        <th>Configuracion</th>
+                    </tr>
+                <tbody></tbody>
+            </table>
+            <table id="tblStore2">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Administrador</th>
+                        <th>Teléfono</th>
+                        <th>Costo renta</th>
+                        <th>Configuracion</th>
+                    </tr>
+                <tbody></tbody>
+
+            </table>
+            <table id="tblStore3">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Administrador</th>
+                        <th>Teléfono</th>
+                    </tr>
+                <tbody></tbody>
+
+            </table>
+        </section>
+    </section>
+    <script src="~/Scripts/CoreCodeScripts/Stores/StoreList.js"></script>
+</div>

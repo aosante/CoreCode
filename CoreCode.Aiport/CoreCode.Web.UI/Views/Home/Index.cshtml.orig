@@ -1,0 +1,371 @@
+﻿@using CoreCode.Web.UI.Models.Controls
+@using CoreCode.Web.UI.Models.Helpers
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@section pageCss
+{
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
+    <!-- Plugins -->
+    <link rel="stylesheet" href="~/Resources/css/plugins.css" />
+    <!-- Core Style Css -->
+    <link rel="stylesheet" href="~/Resources/css/style.css" />
+}
+
+<<<<<<< HEAD
+<div class="heroHomePage">
+    @Html.GetConfirmButton("button1")
+    @Html.GetConfirmButton("button2")
+
+    @Html.GetCancelButton()
+    @Html.GenericButton("buttonGen1", "", "Create Store", "#000", "#fff")
+    @Html.GetForm()
+    @Html.GetBigModal("~/Views/PartialViews/CustomComponentContent/CreateAirportForm.cshtml", "formAirport")
+    @*@Html.GetBigModal("~/Views/PartialViews/CustomComponentContent/CreateStoreForm.cshtml", "formStore")*@
+    @Html.GetSmallModal()
+    @Html.GetButtonModal()
+    
+    @Html.GetDateTimePicker()
+    @Html.GetInputWithLabel("idInput", "text", "placeHolder", "CesarPrueba")
+    @Html.GetAlert()
+</div>
+<div class="">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Cesar</label>
+                <input class="form-control" type="text" placeholder="Default input">
+=======
+>>>>>>> 3512d194edbb2b2e07f23308822f69c32b5ca046
+
+    <body>
+        <!-- =====================================
+    ==== Start Loading -->
+        <div class="loading">
+            <div class="text-center middle">
+                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            </div>
+        </div>
+        <!-- End Loading ====
+    ======================================= -->
+        <!-- =====================================
+    ==== Start Navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <!-- Logo -->
+                <a class="logo" href="#">
+                    <img src="/Resources/img/logo-light.png" alt="logo">
+                    
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"><i class="fas fa-bars"></i></span>
+                </button>
+                <!-- navbar links -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" data-scroll-nav="0">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-scroll-nav="1">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-scroll-nav="2">Viaje</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-scroll-nav="6">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="session-label-link" >Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar ====
+    ======================================= -->
+        <!-- =====================================
+    ==== Start Header -->
+        <header class="header valign bg-img" data-scroll-index="0" data-overlay-dark="7" data-background="/Resources/img/bg4.jpg"   data-stellar-background-ratio="0.5" >
+            <div class="container">
+                <div class="text-center caption mt-30">
+                    <h4>International</h4>
+                    <h1>Airport Holding</h1>
+                    <div class="row">
+                        <div class="offset-md-1 col-md-10 offset-lg-2 col-lg-8">
+                            <p>La cadena de aeropuertaria más grande del mundo</p>
+                        </div>
+                    </div>
+                    <!--  <a href="#0" class="butn butn-light mt-30">
+                      <span>Get Started</span>
+                  </a> -->
+                </div>
+            </div>
+        </header>
+        <!-- End Header ====
+    ======================================= -->
+        <!-- =====================================
+    ==== Start Hero -->
+        <section class="hero" data-scroll-index="1">
+            <div class="section-padding pos-re">
+                <div class="container">
+                    <div class="row">
+                        <div class="offset-lg-2 col-lg-8 offset-md-1 col-md-10 text-center mb-80">
+                            <h4 class="extra-title">Sobre <span>Nosotros</span></h4>
+                            <p>Con 40 años de trayectoría, somos la cadena de administración de aeropuertos mas grande del mundo, estamos presentes en 9 países, hemos administrado más de <span> 50,000 vuelos </span> y hemos movilizado a mas de <span>5,000,000 de personas</span> con sus destinos favoritos</p>
+                        </div>
+                        <div class="feat-item mb-md50 col-lg-4">
+                            <div class="text-center">
+                                <span class="icon icon-basic-flag1"></span>
+                                <h5>Internacional</h5>
+                                <h6>Más de 7 países</h6>
+                                <p>Alemania, Costa Rica, España, Japón, Argentina, Brasil, República Dominicana, Holanda</p>
+                            </div>
+                        </div>
+                        <div class="feat-item active mb-md50 col-lg-4">
+                            <div class="text-center">
+                                <span class="icon icon-basic-world"></span>
+                                <h5>Conexiones</h5>
+                                <h6>Millones de conexiones</h6>
+                                <p>Hemos conectado a más de 5,000,000 de personas con sus destinos favoritos</p>
+                            </div>
+                        </div>
+                        <div class="feat-item col-lg-4">
+                            <div class="text-center">
+                                <span class="icon icon-basic-watch"></span>
+                                <h5>Experiencia</h5>
+                                <h6>Desde 1980</h6>
+                                <p>Más de 40 años de trayectoria y 10,000,000 de horas vuelo, respaldan nuestro liderazgo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="curve curve-gray-b curve-bottom"></div>
+            </div>
+            <div class="tabs-section section-padding bg-gray">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="tab-content col-lg-12" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="pills-home-tab">
+                                <div class="row">
+                                    <div class="left col-lg-6">
+                                        <div class="about box-white">
+                                            <h5 class="title">Misión</h5>
+                                            <p>Ofrecer servicios de administración de aeropuertos de alta calidad que: los clientes recomienden a familiares y amigos, los empleados se sientan orgullosos de pertenecer a esta gran compañía.</p>
+
+                                            <!-- Skills -->
+                                            <div class="skills mt-40">
+                                                <div class="skill-item mb-30">
+                                                </div>
+                                                <div class="skill-item mb-30">
+                                                    <h5 class="title">Visión</h5>
+                                                    <p>Utilizar siempre la última tecnología para poder facilitar al usuario el proceso de viajar de una forma, tranquila y segura.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 image">
+                                        <div class="img">
+                                            <img src="~/Resources/img/2.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Hero ====
+    ======================================= -->
+        <!-- =====================================
+    ==== Start Process -->
+        <section class="" data-scroll-index="2">
+            <div class="process section-padding bg-img bg-fixed pos-re text-center" data-overlay-dark="7" data-background="/Resources/img/bg6.jpg"  >
+                <div class="container">
+                    <div class="row">
+                        <div class="section-head offset-md-2 col-md-8 offset-lg-3 col-lg-6">
+                            <h4><span>Compre</span> Fácil</h4>
+                            <p>Hemos simplificado la forma de viajar en 4 simples pasos</p>
+                        </div>
+                        <div class="full-width clearfix"></div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="item first mb-md50">
+                                <img src="~/Resources/img/arrow.png" class="tobotm" alt="">
+                                <span class="icon icon-basic-lightbulb"></span>
+                                <div class="cont">
+                                    <h3>01</h3>
+                                    <h6>Seleccione</h6>
+                                    <p>Seleccione el lugar al que siempre ha deseado viajar.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="item odd mb-md50">
+                                <img src="~/Resources/img/arrow.png" alt="">
+                                <span class="icon icon-basic-archive"></span>
+                                <div class="cont">
+                                    <h3>02</h3>
+                                    <h6>Compre</h6>
+                                    <p>Busque los boletos, dentro de las miles de compañías con las que tenemos convenios.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="item mb-sm50">
+                                <img src="~/Resources/img/arrow.png" class="tobotm" alt="">
+                                <span class="icon icon-basic-book-pencil"></span>
+                                <div class="cont">
+                                    <h3>03</h3>
+                                    <h6>Revise su reserva</h6>
+                                    <p>Después de su compra verifique que le haya llegado la reserva, verifique que sus datos y la fecha de viaje sean correctos.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="item odd">
+                                <span class="icon icon-basic-case"></span>
+                                <div class="cont">
+                                    <h3>04</h3>
+                                    <h6>Viaje</h6>
+                                    <p>Disfrute de su viaje de una forma tranquila y segura, International Holding Airport se encarga del resto.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="curve curve-gray-t curve-top"></div>
+                <div class="curve curve-bottom"></div>
+            </div>
+        </section>
+        <!-- End Process ====
+    ======================================= -->
+        <!-- =====================================
+    ==== Start Blog -->
+        <!-- End Blog ====
+    ======================================= -->
+        <!-- =====================================
+    ==== Start Call-Action -->
+        <!-- End Call-Action ====
+    ======================================= -->
+        <!-- =====================================
+    ==== Start Contact -->
+        <section class="contact section-padding" data-scroll-index="6">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-5">
+                        <div class="contact-info mb-md50">
+                            <h5>Contáctenos :</h5>
+                            <p>Nuestro personal siempre está dispuesto a ayudarle con cualquier duda o consulta que usted pueda tener</p>
+                            <div class="item">
+                                <span class="icon icon-basic-tablet"></span>
+                                <div class="cont">
+                                    <h6>Teléfono : </h6>
+                                    <p>+506 123456789</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <span class="icon icon-basic-mail-open-text"></span>
+                                <div class="cont">
+                                    <h6>Correo Electrónico : </h6>
+                                    <p>info@internationalairport.com</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <span class="icon icon-basic-geolocalize-05"></span>
+                                <div class="cont">
+                                    <h6>Dirección : </h6>
+                                    <p>150 metros al sur de la embajada Americana, edificio Primavera, Pavas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <form class="form" id="contact-form" method="post" action="http://innovationplans.com/idesign/coco3/contact.php">
+                            <div class="messages"></div>
+                            <div class="controls">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input id="form_name" type="text" name="Name" placeholder="Nombre" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input id="form_email" type="email" name="email" placeholder="Correo Electrónico" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input id="form_subject" type="text" name="Subject" placeholder="Asunto">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <textarea id="form_message" name="message" placeholder="Mensaje" rows="4" required="required"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="butn butn-bg"><span>Enviar Mensaje</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Contact ====
+    ======================================= -->
+        <!-- =====================================
+    ==== Start Footer -->
+        <footer class="text-center pos-re">
+            <div class="container">
+                <!-- Logo -->
+                <a class="logo" href="#">
+                    <img src="~/Resources/img/logo-light.png" alt="logo">
+                </a>
+
+                <p><a href="#">Hecho con ❤ por CodeCore</a></p>
+            </div>
+            <div class="curve curve-top curve-center"></div>
+        </footer>
+        <!-- End Footer ====
+    ======================================= -->
+
+
+
+
+
+        @section scripts{
+            <!-- jQuery -->
+            <script src="~/Resources/js/jquery-3.0.0.min.js"></script>
+            <script src="~/Resources/js/jquery-migrate-3.0.0.min.js"></script>
+            <!-- popper.min -->
+            <script src="~/Resources/js/popper.min.js"></script>
+            <!-- bootstrap -->
+            <script src="~/Resources/js/bootstrap.min.js"></script>
+            <!-- scrollIt -->
+            <script src="~/Resources/js/scrollIt.min.js"></script>
+            <!-- jquery.waypoints.min -->
+            <script src="~/Resources/js/jquery.waypoints.min.js"></script>
+            <!-- owl carousel -->
+            <script src="~/Resources/js/owl.carousel.min.js"></script>
+            <!-- jquery.magnific-popup js -->
+            <script src="~/Resources/js/jquery.magnific-popup.min.js"></script>
+            <!-- stellar js -->
+            <script src="~/Resources/js/jquery.stellar.min.js"></script>
+            <!-- isotope.pkgd.min js -->
+            <script src="~/Resources/js/isotope.pkgd.min.js"></script>
+            <!-- YouTubePopUp.jquery -->
+            <script src="~/Resources/js/YouTubePopUp.jquery.js"></script>
+            <!-- validator js -->
+            <script src="~/Resources/js/validator.js"></script>
+            <!-- custom scripts -->
+            <script src="~/Resources/js/scripts.js"></script>
+
+        }

@@ -1,0 +1,62 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+
+<link rel="stylesheet" href="~/Scripts/TableHide.css" />
+<div id="list-categories-container" style="display: none;">
+    <section>
+        <section>
+            <div>
+                <h2>
+                    Listado general de categorías
+                </h2>
+            </div>
+            <div>
+                <button type="button" id="btnListCategory">Registrar categoria</button>
+            </div>
+            <div>
+                <div>
+                    @Html.GetSelectDropdown("statusFilter", "", "", "", "", new Dictionary<string, string> { { "Categorias habilitadas", "true" }, { "Categorias deshabilitadas", "false" } })
+
+                    @*<select id="statusFilter">
+                            <option selected value="true">Categorías habilitadas</option>
+                            <option value="false">Categorias deshabilitadas</option>
+                        </select>*@
+                </div>
+                <div>
+                    <input type="text" id="txtFilter" placeholder="Buscar por código o nombre:">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            
+            @Html.GetTable("tblCategory", string.Empty, string.Empty, new List<string>()
+            {
+                "Código",
+                "Descripción",
+                "Configuración"
+            })
+            @*<table id="tblCategory">
+                <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>Configuración</th>
+                </tr>
+                <tbody></tbody>
+
+            </table>*@
+            <table id="tblCategory2">
+                <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>Configuración</th>
+                </tr>
+                <tbody></tbody>
+
+            </table>
+        </section>
+    </section>
+</div>
+@* Scripts Section *@
+<script src="~/Scripts/CoreCodeScripts/Categories/CategoryList.js"></script>

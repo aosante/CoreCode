@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E338D6E-418B-4F60-BF27-C6D6D470D947}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoreCode.Web.UI</RootNamespace>
+    <AssemblyName>CoreCode.Web.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
+    </Reference>
+    <Reference Include="Stripe.net, Version=25.15.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stripe.net.25.15.0\lib\net45\Stripe.net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionFilter\AllowCorsAttribute.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AirlineController.cs" />
+    <Compile Include="Controllers\AirportController.cs" />
+    <Compile Include="Controllers\EditProfileController.cs" />
+    <Compile Include="Controllers\FlightController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\AirlineManagerController.cs" />
+    <Compile Include="Controllers\AirportManagerController.cs" />
+    <Compile Include="Controllers\FaqController.cs" />
+    <Compile Include="Controllers\GateController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PassengerController.cs" />
+    <Compile Include="Controllers\PaypalController.cs" />
+    <Compile Include="Controllers\RecoverPasswordController.cs" />
+    <Compile Include="Controllers\RequestController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\TicketController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Configuration.cs" />
+    <Compile Include="Models\Controls\CtrlBaseModel.cs" />
+    <Compile Include="Models\Controls\CtrlButtonModel.cs" />
+    <Compile Include="Models\Controls\CtrlDropDownModel.cs" />
+    <Compile Include="Models\Controls\CtrlInputModel.cs" />
+    <Compile Include="Models\Controls\CtrlTableModel.cs" />
+    <Compile Include="Models\Helpers\HtmlComponentHelper.cs" />
+    <Compile Include="Models\Helpers\ControlExtensions.cs" />
+    <Compile Include="Models\Helpers\PaypalConfiguration.cs" />
+    <Compile Include="Models\HtmlComponents\BigModalHtmlComponent.cs" />
+    <Compile Include="Models\HtmlComponents\ConfirmButtonHtmlComponent.cs" />
+    <Compile Include="Models\HtmlComponents\GenericButtonHtmlComponent.cs" />
+    <Compile Include="Models\HtmlComponents\IBaseHtmlComponent.cs" />
+    <Compile Include="Models\HtmlComponents\InputHtmlComponent.cs" />
+    <Compile Include="Models\HtmlComponents\ModalHtmlComponent.cs" />
+    <Compile Include="Models\HtmlComponents\SelectDropdownHtmlComponent.cs" />
+    <Compile Include="Models\HtmlComponents\TableHtmlComponent.cs" />
+    <Compile Include="Models\ViewComponents\CreateGateComponent.cs" />
+    <Compile Include="Models\ViewComponents\CreateFaqComponent.cs" />
+    <Compile Include="Models\ViewComponents\CreateCategoryComponent.cs" />
+    <Compile Include="Models\ViewComponents\CreateStoreComponent.cs" />
+    <Compile Include="Models\ViewComponents\IViewComponent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Dashboard.css" />
+    <Content Include="Content\GeneralCss.css" />
+    <Content Include="Content\GeneralLayout.css" />
+    <Content Include="Content\Images\BackgroundHomePage.jpg" />
+    <Content Include="Content\Images\BackgroundHomePage2.jpg" />
+    <Content Include="Content\HomePage.css" />
+    <Content Include="Content\Images\ImageTest.jpg" />
+    <Content Include="Content\img\Spinner-1s-200px.gif" />
+    <Content Include="Content\styleSheetAirport.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Controls\CtrlButtonModel.html" />
+    <Content Include="Models\Controls\CtrlDropDownModel.html" />
+    <Content Include="Models\Controls\CtrlInputModel.html" />
+    <Content Include="Models\Controls\CtrlTableModel.html" />
+    <Content Include="Resources\css\plugins.css" />
+    <Content Include="Resources\css\plugins\animate.min.css" />
+    <Content Include="Resources\css\plugins\bootstrap.min.css" />
+    <Content Include="Resources\css\plugins\fontawesome-all.min.css" />
+    <Content Include="Resources\css\plugins\helper.css" />
+    <Content Include="Resources\css\plugins\linea-basic.css" />
+    <Content Include="Resources\css\plugins\magnific-popup.css" />
+    <Content Include="Resources\css\plugins\owl.carousel.min.css" />
+    <Content Include="Resources\css\plugins\owl.theme.default.min.css" />
+    <Content Include="Resources\css\plugins\YouTubePopUp.css" />
+    <Content Include="Resources\css\style.css" />
+    <Content Include="Resources\Images\BackgroundHeaderDashboard.jpg" />
+    <Content Include="Resources\Images\BackgroundHeaderDashboardAirlineAdmin.jpg" />
+    <Content Include="Resources\Images\BackgroundHeaderDashboardGeneralAdmin.jpg" />
+    <Content Include="Resources\img\1.jpg" />
+    <Content Include="Resources\img\2.jpg" />
+    <Content Include="Resources\img\3.jpg" />
+    <Content Include="Resources\img\4.jpg" />
+    <Content Include="Resources\img\5.jpg" />
+    <Content Include="Resources\img\arrow.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Resources\img\bg1.jpg" />
+    <Content Include="Resources\img\bg2 %282%29.jpg" />
+    <Content Include="Resources\img\bg2.jpg" />
+    <Content Include="Resources\img\bg4.jpg" />
+    <Content Include="Resources\img\bg6.jpg" />
+    <Content Include="Resources\img\blog\1.jpg" />
+    <Content Include="Resources\img\blog\2.jpg" />
+    <Content Include="Resources\img\blog\3.jpg" />
+    <Content Include="Resources\img\clients\1.jpg" />
+    <Content Include="Resources\img\clients\2.jpg" />
+    <Content Include="Resources\img\clients\3.jpg" />
+    <Content Include="Resources\img\clients\4.jpg" />
+    <Content Include="Resources\img\demos\1.jpg" />
+    <Content Include="Resources\img\demos\2.jpg" />
+    <Content Include="Resources\img\demos\3.jpg" />
+    <Content Include="Resources\img\demos\4.jpg" />
+    <Content Include="Resources\img\demos\5.jpg" />
+    <Content Include="Resources\img\demos\6.jpg" />
+    <Content Include="Resources\img\demos\7.jpg" />
+    <Content Include="Resources\img\logo-dark.png" />
+    <Content Include="Resources\img\logo-light.png" />
+    <Content Include="Resources\img\portfolio\1.jpg" />
+    <Content Include="Resources\img\portfolio\2.jpg" />
+    <Content Include="Resources\img\portfolio\3.jpg" />
+    <Content Include="Resources\img\portfolio\4.jpg" />
+    <Content Include="Resources\img\portfolio\5.jpg" />
+    <Content Include="Resources\img\portfolio\6.jpg" />
+    <Content Include="Resources\img\portfolio\7.jpg" />
+    <Content Include="Resources\img\portfolio\8.jpg" />
+    <Content Include="Resources\img\quot.png" />
+    <Content Include="Resources\img\team\1.jpg" />
+    <Content Include="Resources\img\team\2.jpg" />
+    <Content Include="Resources\img\team\3.jpg" />
+    <Content Include="Resources\img\team\4.jpg" />
+    <Content Include="Resources\img\wave.svg" />
+    <Content Include="Resources\js\animated.headline.js" />
+    <Content Include="Resources\js\app.js" />
+    <Content Include="Resources\js\bootstrap.min.js" />
+    <Content Include="Resources\js\Index.js" />
+    <Content Include="Resources\js\isotope.pkgd.min.js" />
+    <Content Include="Resources\js\jquery-3.0.0.min.js" />
+    <Content Include="Resources\js\jquery-migrate-3.0.0.min.js" />
+    <Content Include="Resources\js\jquery.counterup.min.js" />
+    <Content Include="Resources\js\jquery.magnific-popup.min.js" />
+    <Content Include="Resources\js\jquery.stellar.min.js" />
+    <Content Include="Resources\js\jquery.waypoints.min.js" />
+    <Content Include="Resources\js\owl.carousel.min.js" />
+    <Content Include="Resources\js\particles.min.js" />
+    <Content Include="Resources\js\popper.min.js" />
+    <Content Include="Resources\js\scripts.js" />
+    <Content Include="Resources\js\scrollIt.min.js" />
+    <Content Include="Resources\js\validator.js" />
+    <Content Include="Resources\js\YouTubePopUp.jquery.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\jquery.dataTables.min.css" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="libman.json" />
+    <None Include="Properties\PublishProfiles\CoreCodeWeb - Web Deploy.pubxml" />
+    <Content Include="Resources\fonts\fa-brands-400.eot" />
+    <Content Include="Resources\fonts\fa-brands-400.ttf" />
+    <Content Include="Resources\fonts\fa-brands-400.woff" />
+    <Content Include="Resources\fonts\fa-brands-400.woff2" />
+    <Content Include="Resources\fonts\fa-brands-400d41d.eot" />
+    <Content Include="Resources\fonts\fa-regular-400.eot" />
+    <Content Include="Resources\fonts\fa-regular-400.ttf" />
+    <Content Include="Resources\fonts\fa-regular-400.woff" />
+    <Content Include="Resources\fonts\fa-regular-400.woff2" />
+    <Content Include="Resources\fonts\fa-regular-400d41d.eot" />
+    <Content Include="Resources\fonts\fa-solid-900.eot" />
+    <Content Include="Resources\fonts\fa-solid-900.ttf" />
+    <Content Include="Resources\fonts\fa-solid-900.woff" />
+    <Content Include="Resources\fonts\fa-solid-900.woff2" />
+    <Content Include="Resources\fonts\fa-solid-900d41d.eot" />
+    <Content Include="Resources\fonts\linea-basic-10.eot" />
+    <Content Include="Resources\fonts\linea-basic-10.ttf" />
+    <Content Include="Resources\fonts\linea-basic-10.woff" />
+    <Content Include="Resources\fonts\linea-basic-10d41d.eot" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\CoreCodeScripts\AirlineAdmin\AirlineManager.js" />
+    <Content Include="Scripts\CoreCodeScripts\Airlines\AirlineList.js" />
+    <Content Include="Scripts\CoreCodeScripts\Airlines\AirlineRegister.js" />
+    <Content Include="Scripts\CoreCodeScripts\Airlines\AirlineEdit.js" />
+    <Content Include="Scripts\CoreCodeScripts\AirportManager\AirportManager.js" />
+    <Content Include="Scripts\CoreCodeScripts\Common\FormControl.js" />
+    <Content Include="Scripts\CoreCodeScripts\Common\LoginComponent.js" />
+    <Content Include="Scripts\CoreCodeScripts\DomHelper.js" />
+    <Content Include="Scripts\CoreCodeScripts\HomePage.js" />
+    <Content Include="Scripts\CoreCodeScripts\Login.js" />
+    <Content Include="Scripts\CoreCodeScripts\recoverPassword\RecoverPassword.js" />
+    <Content Include="Scripts\CoreCodeScripts\Request\RequestList.js" />
+    <Content Include="Scripts\CoreCodeScripts\Stores\CreateStore.js" />
+    <Content Include="Scripts\CoreCodeScripts\Stores\StoreList.js" />
+    <Content Include="Scripts\CoreCodeScripts\ApiService.js" />
+    <Content Include="Scripts\CoreCodeScripts\Dashboard.js" />
+    <Content Include="Scripts\CoreCodeScripts\DashboardSideNavigation.js" />
+    <Content Include="Scripts\CoreCodeScripts\HomePage.js" />
+    <Content Include="Scripts\CoreCodeScripts\ModalService.js" />
+    <Content Include="Scripts\CoreCodeScripts\Stores\StoreRegisterCtrl.js" />
+    <Content Include="Scripts\CoreCodeScripts\userSession.js" />
+    <Content Include="Scripts\GoogleCharts.js" />
+    <Content Include="Scripts\JavaScript.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Pay.css" />
+    <Content Include="Scripts\TableHide.css" />
+    <Content Include="Scripts\Views\ControlActions.js" />
+    <Content Include="Scripts\Views\EditProfile.js" />
+    <Content Include="Scripts\Views\Index.js" />
+    <Content Include="Scripts\Views\vCreatePassenger.js" />
+    <Content Include="Scripts\Views\vEditAirlineAdmin.js" />
+    <Content Include="Scripts\Views\vEditAirportAdmin.js" />
+    <Content Include="Scripts\Views\vRequestAdminAirportFromAirline .js" />
+    <Content Include="Scripts\Views\vRequestAdminAirlineToAirport.js" />
+    <Content Include="Scripts\Views\vTicket.js" />
+    <Content Include="Scripts\Views\vCreateAirlineAdmin.js" />
+    <Content Include="Scripts\Views\vCreateAirportAdmin.js" />
+    <Content Include="Scripts\Views\vCreateAirline.js" />
+    <Content Include="Scripts\Views\vCreateAirports.js" />
+    <Content Include="Scripts\Views\vFlight.js" />
+    <Content Include="Scripts\Views\vFaqs.js" />
+    <Content Include="Scripts\Views\vCategories.js" />
+    <Content Include="Scripts\Views\vListAirlinesRequest.js" />
+    <Content Include="Scripts\Views\vListAirports.js" />
+    <Content Include="Scripts\Views\vGates.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Store\CreateStore.cshtml" />
+    <Content Include="Views\Store\ListStore.cshtml" />
+    <Content Include="Views\Airport\vCreateAirport.cshtml" />
+    <Content Include="Views\Dashboard\ShowAirportDashboard.cshtml" />
+    <Content Include="Views\Shared\DashboardLayout.cshtml" />
+    <Content Include="Views\Dashboard\DashboardAsideNavigation.cshtml" />
+    <Content Include="Views\AiportManager\vCreateAirportAdmin.cshtml" />
+    <Content Include="Views\Airline\CreateAirline.cshtml" />
+    <Content Include="Views\Shared\PageLayout.cshtml" />
+    <Content Include="Views\Airline\ListAirline.cshtml" />
+    <Content Include="Views\Shared\GeneralLayout.cshtml" />
+    <Content Include="Views\PartialViews\ConfirmButton.cshtml" />
+    <Content Include="Views\PartialViews\Table.cshtml" />
+    <Content Include="Views\PartialViews\SelectDropdown.cshtml" />
+    <Content Include="Views\PartialViews\SmallModal.cshtml" />
+    <Content Include="Views\PartialViews\BigModal.cshtml" />
+    <Content Include="Views\PartialViews\Form.cshtml" />
+    <Content Include="Views\PartialViews\CancelButton.cshtml" />
+    <Content Include="Views\PartialViews\Alert.cshtml" />
+    <Content Include="Views\PartialViews\Input.cshtml" />
+    <Content Include="Views\PartialViews\DateTimePicker.cshtml" />
+    <Content Include="Views\PartialViews\ButtonModal.cshtml" />
+    <Content Include="Views\PartialViews\CustomComponentContent\CreateAirportForm.cshtml" />
+    <Content Include="Views\PartialViews\CustomComponentContent\CreateStoreForm.cshtml" />
+    <Content Include="Views\PartialViews\GenericButton.cshtml" />
+    <Content Include="Views\PartialViews\CustomComponentContent\LoginComponent.cshtml" />
+    <Content Include="Views\PartialViews\CustomComponentContent\EditAirport.cshtml" />
+    <Content Include="Views\PartialViews\CustomComponentContent\CreateStorePartial.cshtml" />
+    <Content Include="Views\Store\EditStore.cshtml" />
+    <Content Include="Views\PartialViews\CustomComponentContent\CreateCategory.cshtml" />
+    <Content Include="Views\PartialViews\CustomComponentContent\ListCategories.cshtml" />
+    <Content Include="Views\Airline\EditAirline.cshtml" />
+    <Content Include="Views\RecoverPassword\RecoverPassword.cshtml" />
+    <Content Include="Views\Request\ListRequest.cshtml" />
+    <Content Include="Views\PartialViews\CustomComponentContent\ViewAirports.cshtml" />
+    <Content Include="Views\PartialViews\CustomComponentContent\ViewStores.cshtml" />
+    <Content Include="Views\PartialViews\CustomComponentContent\ViewGates.cshtml" />
+    <Content Include="Views\PartialViews\CustomComponentContent\AddGate.cshtml" />
+    <Content Include="Views\PartialViews\CustomComponentContent\ViewAirlines.cshtml" />
+    <Content Include="Views\Dashboard\ShowAirlineDashboard.cshtml" />
+    <Content Include="Views\Dashboard\ShowGeneralDashboard.cshtml" />
+    <Content Include="Views\PartialViews\CustomComponentContent\CreateCategoryPartial.cshtml" />
+    <Content Include="Views\Category\vCategories.cshtml" />
+    <Content Include="Views\Gate\vGates.cshtml" />
+    <Content Include="Views\Flight\vFlight.cshtml" />
+    <Content Include="Views\Faq\vFaqs.cshtml" />
+    <Content Include="Views\Airport\vListAirports.cshtml" />
+    <Content Include="Views\Ticket\vTicket.cshtml" />
+    <Content Include="Views\AirlineManager\vCreateAirlineAdmin.cshtml" />
+    <Content Include="Views\Airline\vCreateAirline.cshtml" />
+    <Content Include="Views\Airline\vListAirlinesRequest.cshtml" />
+    <Content Include="Views\AirlineManager\vRequestAdminAirlineToAirport.cshtml" />
+    <Content Include="Views\AiportManager\vRequestAdminAirportFromAirline.cshtml" />
+    <Content Include="Views\EditProfile\EditProfile.cshtml" />
+    <Content Include="Views\Paypal\Paypal.cshtml" />
+    <Content Include="Views\AiportManager\vEditAirportAdmin.cshtml" />
+    <Content Include="Views\AirlineManager\vEditAirlineAdmin.cshtml" />
+    <Content Include="Views\Passenger\VPassenger.cshtml" />
+    <Content Include="Views\Passenger\VListTicket.cshtml" />
+    <Content Include="Views\Ticket\PaymentWithCreditCard.cshtml" />
+    <Content Include="Views\Ticket\PaymentWithPaypal.cshtml" />
+    <Content Include="Views\Paypal\Index.cshtml" />
+    <Content Include="Views\Ticket\Index.cshtml" />
+    <Content Include="Views\Passenger\vCreatePassenger.cshtml" />
+    <Content Include="Views\Passenger\vListFlightsPassengers.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreCode.Entities.POJO\CoreCode.Entities.POJO.csproj">
+      <Project>{FFFA892C-32FF-43D6-9664-866AFCD45922}</Project>
+      <Name>CoreCode.Entities.POJO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57312</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57312/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

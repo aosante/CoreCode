@@ -1,0 +1,110 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+
+
+@section pageCss{
+    <link rel="stylesheet" href="~/Scripts/TableHide.css" />
+}
+
+
+<script src="~/Scripts/Views/ControlActions.js"></script>
+<script src="~/Scripts/Views/vRequestAdminAirlineToAirport.js"></script>
+@{
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+<div style="margin-top: 50px; margin: 0 auto; width: 98%;">
+
+
+    <label>        *Costo de puerta, pista e impuesto es en dólares $</label>
+    @Html.GetSelectDropdown("statusFilter", "vRequestAdminAirlineToAirport", "AirportStatusDropdownChange", "","", new Dictionary<string, string> { { "Aeropuertos asociados", "true" }, { "Aeropuertos no asociados", "false" } })
+
+    @Html.GetTable("tblAirport", "vRequestAdminAirlineToAirport", "BindFields", "", new List<string> { "ID", "Name", "Address", "Phone", "ZipCode", "GateTariff", "RunwayTariff", "Tax", "Latitude", "Longitude" },
+         new List<string> { "Código", "Nombre", "Dirección", "# Tel", "Código Postal", "$Puerta", "$Pista", "Impuesto", "Lat", "Long" })
+    
+
+</div>
+
+
+<div class="card border-secondary"style="margin-top: 50px; margin: 0 auto; width: 98%;">
+    <div class="card-header">
+        <div class="row pull-right">
+            <div class="col-md-8">Información de aeropuerto</div>
+            <div class="col-md-4">
+
+                @Html.GetConfirmButton("btnRequestAirport", "CreateRequest", "vRequestAdminAirlineToAirport", "", "Hacer solicitud")
+                @Html.GetConfirmButton("btnDisable", "Disable", "vRequestAdminAirlineToAirport", "", "Cancelar convenio")
+               
+
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    <form id="frmEdition">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+
+                                @Html.GetInputWithLabel("txtId", "text", "Codigo", "", "", "ID", true)
+
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+
+                            <div class="form-group col-md-4">
+                                @Html.GetInputWithLabel("txtName", "text", "Nombre", "form-control", "", "Name", true)
+
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                @Html.GetInputWithLabel("txtPhone", "text", "Telefono", "form-control", "", "Phone", true)
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.GetInputWithLabel("txtZipCode", "text", "Código Postal", "form-control", "", "ZipCode", true)
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                @Html.GetInputWithLabel("txtGateTariff", "number", "Costo por uso de puerta:", "form-control", "", "GateTariff", true)
+                                <label>        *Costo en dólares $</label>
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.GetInputWithLabel("txtRunwayTariff", "number", "Costo por uso de pista:", "form-control", "", "RunwayTariff", true)
+                                <label>        *Costo en dólares $</label>
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.GetInputWithLabel("txtTax", "number", "Costo de impuesto:", "form-control", "", "Tax", true)
+                                <label>        *Costo en dólares $</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.GetInputWithLabel("txtAddress", "text", "Dirección", "form-control", "", "Address", true)
+
+                            <div class="form-row" style="display: none">
+                                <div class="form-group col-md-6">
+                                    @Html.GetInputWithLabel("coordenadaX", "text", "Latitud", "form-control", "", "Latitude", true)
+                                </div>
+                                <div class="form-group col-md-6">
+                                    @Html.GetInputWithLabel("coordenadaY", "text", "Longitud", "form-control", "", "Longitude", true)
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </form>
+                </div>
+            </div>
+            <div id="mapa" class="mapa" style="width: 750px; height: 390px;  pointer-events:none"></div>
+            <div style="display: none">
+                <b>Instrucciones de uso:</b>
+                <div id="statusMarcador">
+                    <i>Mueva el marcador.</i>
+                </div>
+                <b>Posición actual:</b>
+
+            </div>
+        </div>
+    </div>
+</div>

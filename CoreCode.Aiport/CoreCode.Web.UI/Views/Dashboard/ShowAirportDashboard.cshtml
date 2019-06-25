@@ -1,0 +1,215 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+@{
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+
+<div id="report-dashboard" class="reports-dashboard currentShownSlide">
+        <div class="main-header">
+            <div class="main-header__intro-wrapper">
+                <div class="main-header__welcome">
+                    <div class="main-header__welcome-title text-light"><strong id="airportNameHeader"></strong></div>
+                    @*<div class="main-header__welcome-subtitle text-light">How are you today?</div>*@
+                </div>
+                <div class="quickview">
+                    <div class="quickview__item">
+                        <div class="quickview__item-total">0</div>
+                        <div class="quickview__item-description">
+                            <i class="far fa-calendar-alt"></i>
+                            <span class="text-light">Vuelos hoy</span>
+                        </div>
+                    </div>
+                    <div class="quickview__item">
+                        <div class="quickview__item-total">0</div>
+                        <div class="quickview__item-description">
+                            <i class="far fa-comment"></i>
+                            <span class="text-light">Tiquetes Vendidos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-overview">
+            <div class="overviewCard" id="gates-ammount">
+
+            </div>
+            <div class="overviewCard" id="gates-gain">
+
+            </div>
+            <div class="overviewCard" id="store-gain">
+
+            </div>
+            <div class="overviewCard" id="store-count">
+
+            </div>
+            <div class="overviewCard" id="landing-gain">
+
+            </div>
+        </div>
+        <div style="column-count: 3; background-color: white; padding-left: 20px;">
+            <div class="store-card card">
+                @Html.GetTable("airlineList", "Dashboard", "", "", new List<string> { "Name" }, new List<string> { "Nombre Aerolinea" })
+                <a href="/vGates">See More</a>
+            </div>
+            <div class="store-card card">
+                @Html.GetTable("gateList", "Dashboard", "", "", new List<string> { "IDGate" }, new List<string> { "Código Puerta" })
+                <a href="/vGates">See More</a>
+            </div>
+            <div class="store-card card">
+                @Html.GetTable("storeList", "Dashboard", "", "", new List<string> { "Name" }, new List<string> { "Nombre Tienda" })
+                <a href="/vGates">See More</a>
+            </div>
+            
+        </div>
+        <div class="main__cards">
+            <div class="card card--finance">
+                <div class="card__header">
+                    <div class="card__header-title text-light">
+                        Ganancia de <strong>tiendas</strong> este mes
+                        <a href="#" class="card__header-link text-bold">View All</a>
+                    </div>
+                    
+                </div>
+
+                <div id="storesPieChart"></div>
+
+            </div>
+            <div class="card card--finance">
+                <div class="card__header">
+                    <div class="card__header-title text-light">
+                        Paises <strong>más visitados</strong> este mes
+                    </div>
+                   
+                </div>
+
+                <div id="worldMapChart"></div>
+            </div>
+            <div class="card card--finance">
+                <div class="card__header">
+                    <div class="card__header-title text-light">
+                        Cantidad de <strong>tiendas por categoria</strong>
+                    </div>
+                    
+                </div>
+                <div id="categoryChartContainer"></div>
+            </div>
+            <div class="card card--finance">
+                <div class="card__header">
+                    <div class="card__header-title text-light">
+                        Cantidad de <strong>vuelos</strong> este mes
+                        <a href="#" class="card__header-link text-bold">View All</a>
+                    </div>
+                </div>
+
+                <div id="bigBarChart"></div>
+
+            </div>
+
+        </div> <!-- /.main-cards -->
+
+
+    </div>
+    @*Edit Airport*@
+    
+
+
+
+<div id="generalScoreCardContainer" class="generalDashboardContainer">
+
+
+    <div id="scoreCard-template">
+        <div class="overviewCard-icon overviewCard-icon--document">
+            @*<i class="far fa-file-alt"></i>*@
+            <img class="scoreImage" url="" />
+        </div>
+        <div class="overviewCard-description">
+            <h3 class="overviewCard-title text-light scoreTitle"></h3>
+            <p class="overviewCard-subtitle scoreValue"></p>
+        </div>
+    </div>
+
+
+    @*<div id="scoreCard-template">
+            <img class="scoreImage" url="" />
+            <h3 class="overviewCard-title text-light scoreTitle"></h3>
+            <p class="overviewCard-subtitle scoreValue"></p>
+        </div>*@
+
+    @*<div id="scoreCard-template">
+            <div class="scoreCard">
+                <img class="scoreImage" url=""/>
+                <span class="scoreTitle"></span>
+                <span class="scoreValue"></span>
+            </div>
+
+        </div>*@
+</div>
+
+
+
+@section pageCss
+{
+    <link href="~/Content/Dashboard.css" rel="stylesheet" />
+    <style>
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif
+        }
+
+        /*Store Card*/
+        .store-card-header {
+            background-color: #5D5D5D;
+            color: white;
+        }
+
+        .store-card {
+            border: 1px solid #8B8B8B;
+        }
+        /*End Store Cards*/
+        .scoreImage {
+            width: 100%;
+        }
+
+        #scoreCard-template {
+            display: none;
+        }
+
+        .scoreTitle {
+            font-weight: bold;
+        }
+
+        .scoreCard {
+            border: 1px solid black;
+            width: 20%;
+        }
+
+        .skeleton-triple {
+            float: left;
+            margin: 20px 6%;
+        }
+
+        .skeleton-middle {
+            margin: 0 auto;
+            width: 30%;
+        }
+
+        .skeleton-single-line {
+            width: 75%;
+            margin: 20px auto;
+        }
+    </style>
+}
+
+@section headerScripts
+{
+    <script src="~/Scripts/GoogleCharts.js"></script>
+}
+
+
+@section scripts{
+    <script src="~/Scripts/Views/ControlActions.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/Dashboard.js"></script>
+}

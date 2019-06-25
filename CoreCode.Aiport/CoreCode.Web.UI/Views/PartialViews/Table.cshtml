@@ -1,0 +1,32 @@
+﻿@model CoreCode.Web.UI.Models.HtmlComponents.TableHtmlComponent
+<div class="table-responsive ">
+    <table id="@Model.Id" class="table table-bordered table-hover @Model.CustomCssClasses" ColumnsDataName="@string.Join(",", Model.TableHeaderColumns)">
+        <thead class="thead-dark">
+        <tr>
+            @foreach (var column in Model.Columns)
+            {
+                <th scope="col">@column</th>
+            }
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function () {
+        
+        $('#@Model.Id tbody').on('click', 'tr', function () {
+            var table = $('#@Model.Id').DataTable();
+            var data = table.row(this).data();
+            var view = new @(Model.ViewName)();
+            if (view != undefined) {
+                @if (!string.IsNullOrEmpty(Model.OnSelectFunctionName)) {
+                    <text>
+                view.@(Model.OnSelectFunctionName)(data, table.row(this));
+                    </text>
+                }
+            }
+        });
+    });
+</script>

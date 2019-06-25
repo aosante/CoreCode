@@ -1,0 +1,15 @@
+
+Log Entry : 12:49:37 AM Saturday, March 30, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 12:50:05 AM Saturday, March 30, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------
+
+Log Entry : 12:51:39 AM Saturday, March 30, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------

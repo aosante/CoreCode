@@ -1,0 +1,67 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+
+@{
+    ViewBag.Title = "Aerolineas registradas";
+}
+
+@section pageCss{
+    <link rel="stylesheet" href="~/Scripts/TableHide.css" />
+}
+
+
+<div class="main-right-content-container">
+    <section>
+        <div>
+            <h2>
+                Lista de aerolineas
+            </h2>
+        </div>
+        <div>
+            <button type="button" id="btnRegisterAirline">Registrar aerolinea</button>
+        </div>
+        <div>
+            <div>
+                <select id="statusFilter">
+                    <option selected value="true">Aerolineas activas</option>
+                    <option value="false">Aerolineas desactivadas</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" id="txtFilter" placeholder="Buscar por código o nombre:">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        
+        @Html.GetTable("tblAirline", string.Empty, string.Empty, new List<string>()
+        {
+            "Id", "Nombre Comercial", "Nombre de negocio", "Descripcion", "Email", ""
+        })
+
+        @Html.GetTable("tblAirline2", string.Empty, string.Empty, new List<string>()
+        {
+            "Id", "Nombre Comercial", "Nombre de negocio", "Descripcion", "Email", ""
+        })
+        @*<table id="tblAirline2">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Comercial name</th>
+                    <th>Business name</th>
+                    <th>Creation year</th>
+                    <th>Description</th>
+                    <th>Email</th>
+                    <th>Status </th>
+                </tr>
+            <tbody></tbody>
+
+        </table>*@
+    </section>
+</div>
+
+@section scripts{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/ApiService.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/Airlines/AirlineList.js"></script>
+}

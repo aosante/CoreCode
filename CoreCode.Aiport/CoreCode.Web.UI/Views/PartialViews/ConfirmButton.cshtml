@@ -1,0 +1,12 @@
+﻿@model CoreCode.Web.UI.Models.HtmlComponents.ConfirmButtonHtmlComponent
+<button id="@Model.Id" type="button" class="@Model.BoostrapClasses @Model.GetCustomCssClasses">@Model.ButtonValue</button>
+<script>
+    $(document).ready(function () {
+        $("#@Model.Id").click(function () {
+            var viewInstance = new @(Model.ScriptInstanceName)(@(new HtmlString(Model.ScriptParameters)));
+            if (viewInstance) {
+                viewInstance.@(Model.ScriptFunction)();
+            }
+        });
+    });
+</script>

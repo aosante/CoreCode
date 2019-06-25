@@ -1,0 +1,54 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+
+
+@section pageCss{
+    <link rel="stylesheet" href="~/Scripts/TableHide.css" />
+}
+
+
+<script src="~/Scripts/Views/ControlActions.js"></script>
+<script src="~/Scripts/Views/vGates.js"></script>
+@{
+    /**/
+
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+<div id="DropdownAndTable" style="margin: 0 auto; width: 98%";>
+
+    @Html.GetSelectDropdown("statusFilter","vGates", "GateStatusDropdownChange", "", "",
+        new Dictionary<string, string> { { "Puertas habilitadas",  "true" }, { "Puertas deshabilitadas", "false" } })
+
+    @Html.GetTable("tblGate", "vGates", "BindFields", "", new List<string> { "IDGate", "Number" },
+    new List<string> { "Código", "# Puerta" })
+</div>
+
+
+<div class="card border-secondary" style="margin: 0 auto; width: 98%;">
+    <div class="card-header">
+        <div class="row pull-right">
+            <div class="col-md-8">Información de puerta</div>
+            <div class="col-md-4">
+                @Html.GetConfirmButton("btnRegisterGate", "Create", "vGates", "", "Registrar")
+                @Html.GetConfirmButton("btnDisable", "Disable", "vGates", "", "Deshabilitar")
+                @Html.GetConfirmButton("btnEnable", "Enable", "vGates", "", "Habilitar")
+                @Html.GetConfirmButton("btnClean", "CleanForm", "vGates", "", "Limpiar")
+
+
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    <form id="frmEdition">
+                        @Html.GetInputWithLabel("txtId", "text", "Codigo", "", "", "IDGate", true)
+                        @Html.GetInputWithLabel("nbmNumber", "number", "# Puerta", "", "", "Number", true)
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

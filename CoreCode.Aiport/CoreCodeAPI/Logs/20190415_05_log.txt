@@ -1,0 +1,5 @@
+
+Log Entry : 5:14:46 PM Monday, April 15, 2019
+  :
+  :Exception of type 'CoreCode.Exceptions.BussinessException' was thrown.
+-------------------------------

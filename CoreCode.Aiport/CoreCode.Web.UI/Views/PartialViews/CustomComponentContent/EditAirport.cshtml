@@ -1,0 +1,73 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+<div id="editAirportContainer" style="display: none;">
+
+
+@{
+    ViewBag.Title = "Modificando aeropuerto";
+}
+
+@section pageCss{
+    <link rel="stylesheet" href="~/Scripts/TableHide.css" />
+}
+<h2>Modificación de aeropuerto</h2>
+
+<section>
+    <div>
+        <button type="button" id="btnListAirport" style="display: none">Ver aeropuertos</button>
+    </div>
+    
+    <form class="main-right-content-container">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                @Html.GetInputWithLabel("txtName", "text", "Nombre", "form-control", "Nombre:", true)
+            </div>
+            <div class="form-group col-md-4">
+                @Html.GetInputWithLabel("txtPhone", "text", "Telefono", "form-control", "Telefono:", true)
+            </div>
+            <div class="form-group col-md-4">
+                @Html.GetInputWithLabel("txtZipCode", "text", "Código Postal", "form-control", "Código Postal:", true)
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                @Html.GetInputWithLabel("txtGateTariff", "text", "Costo por uso de puerta:", "form-control", "Costo:", true)
+            </div>
+            <div class="form-group col-md-4">
+                @Html.GetInputWithLabel("txtRunwayTariff", "number", "Costo por uso de pista:", "form-control", "Costo por uso de pista:", true)
+            </div>
+            <div class="form-group col-md-4">
+                @Html.GetInputWithLabel("txtTax", "number", "Costo de impuesto:", "form-control", "Costo de impuesto:", true)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.GetInputWithLabel("txtAddress", "text", "Dirección", "form-control", "Dirección:", true)
+            <div id="mapa" class="mapa" style="width: 100%; height: 200px;"></div>
+            <div style="display: none">
+            <b>Instrucciones de uso:</b>
+            <div id="statusMarcador">
+                <i>Mueva el marcador.</i>
+            </div>
+            <b>Posición actual:</b>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.GetInputWithLabel("coordenadaX", "text", "Latitud", "form-control", string.Empty)
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.GetInputWithLabel("coordenadaY", "text", "Longitud", "form-control", string.Empty)
+                </div>
+            </div>
+            </div>
+        </div>
+        <div id="btnControl">
+            @Html.GetConfirmButton("btnEditAirport", "Modificar")
+            @Html.GetCancelButton("btnCancel")
+            @*<button type="button" id="btnEditAirport">Modificar</button>
+            <button type="button" id="btnCancel">Cancelar</button>*@
+        </div>
+
+    </form>
+    
+</section>
+
+</div>
+<script src="~/Scripts/CoreCodeScripts/Airports/AirportEdit.js"></script>

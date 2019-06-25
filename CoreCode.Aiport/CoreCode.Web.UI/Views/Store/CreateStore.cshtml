@@ -1,0 +1,19 @@
+﻿@using CoreCode.Web.UI.Models.ViewComponents
+
+@section pageCss{
+    <link rel="stylesheet" href="~/Scripts/TableHide.css" />
+}
+
+@section scripts{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/ApiService.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/Common/FormControl.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/Stores/CreateStore.js"></script>
+}
+
+@Html.Partial("~/Views/PartialViews/CustomComponentContent/CreateStorePartial.cshtml", new CreateStoreComponent()
+{
+    ViewName = "CreateStore"
+})
+
+

@@ -1,0 +1,90 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+
+<script src="~/Scripts/Views/ControlActions.js"></script>
+<script src="~/Scripts/Views/vFlight.js"></script>
+@{
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+
+@Html.GetSelectDropdown("statusFilter","vFlight", "FlightStatusDropdownChange", "", "",
+    new Dictionary<string, string> { { "Vuelos a tiempo",  "a tiempo" }, { "Vuelos cancelados", "cancelado"}, { "Vuelos retrasados", "retrasado" } })
+
+@Html.GetTable("tblFlights", "vFlight", "BindFields", "", new List<string> { "Id", "Airline_Id", "Origin_Airport_Id", "Destiny_Airport_Id", "Departure_Time", "Arrival_DateTime", "Id_Gate"}, new List<string> { "Id", "Aerolinea", "Aeropuerto Origen", "Aeropuerto Destino", "Tiempo de salida", "Tiempo de llegada", "Puerta" })
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        <div class="row pull-right">
+            
+            <div class="col-md-4">
+                @Html.GetConfirmButton("btnRegisterFlight", "Create", "vFlight", "", "Registrar")
+                @Html.GetButton("btnEditFlight", "Update", "vFlight", "", "hidden btn btn-outline-success", "", "Modificar")
+                @Html.GetConfirmButton("btnClean", "CleanForm", "vFlight", "", "Limpiar")
+
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bs-component">
+                    <form id="frmEdition">
+                        <div style="margin: 0 auto; width: 30%;">
+                            <h2>Informacion de vuelo</h2>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                @Html.GetInputWithLabel("txtId", "text", "", "", "Ingrese el codigo: ", "Id", true)
+
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.GetSelectDropdown("dropdownAirline", "vFlight", "", "loadAirlineDropdown", "Airline_Id",
+                                    new Dictionary<string, string>() {{"Seleccione la aerolínea:", ""}})
+                            </div>
+                            
+                        </div>
+                        <div class="form-row">
+
+                            <div class="form-group col-md-4">
+                                @Html.GetSelectDropdown("dropdownOriginAirport", "vFlight", "", "", "Origin_Airport_Id",
+                                    new Dictionary<string, string>() {{"Seleccione aeropuerto origen:", ""}})
+                            </div>
+
+
+                            <div class="form-group col-md-4">
+                                @Html.GetInputWithLabel("txtDeparture_Time", "date", "Fecha de Salida", "", "Ingrese la fecha de salida: ", "Departure_Time", true)
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                @Html.GetSelectDropdown("dropdownGate", "vFlight", "", "loadGateDropdown", "Id_Gate",
+                                    new Dictionary<string, string>() {{"Seleccione  la puerta:", ""}})
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                @Html.GetSelectDropdown("dropdownDestinyAirport", "vFlight", "", "loadAirportDropdown", "Destiny_Airport_Id",
+                                    new Dictionary<string, string>() {{"Seleccione aeropuerto destino:", ""}})
+
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                @Html.GetInputWithLabel("txtArrival_Time", "date", "Fecha de Llegada", "", "Ingrese la fecha de llegada: ", "Arrival_DateTime", true)
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                @Html.GetSelectDropdown("txtStatus", "", "", "", "", new Dictionary<string, string>()
+                                {
+                                    {"A Tiempo", "a tiempo"},
+                                    {"Cancelado", "cancelado"},
+                                    {"Retrasado", "retrasado"}
+                                }, "hidden")
+                            </div>
+                           
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

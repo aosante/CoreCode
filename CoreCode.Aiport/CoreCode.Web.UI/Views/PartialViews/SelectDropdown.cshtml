@@ -1,0 +1,53 @@
+﻿@model CoreCode.Web.UI.Models.HtmlComponents.SelectDropdownHtmlComponent
+<select class="form-control @Model.GetCustomCssClasses" id="@Model.Id" columnDataName="@Model.ColumnDataName">
+    @if (Model.OptionList != null && Model.OptionList.Any())
+    {
+         foreach (var keyPair in Model.OptionList)
+         {
+             if (Model.OptionList.FirstOrDefault().Equals(keyPair))
+             {
+                 <option value="@keyPair.Value" selected>@keyPair.Key</option>
+             }
+             else
+             {
+                 <option value="@keyPair.Value">@keyPair.Key</option>
+             }
+         }
+    }
+    
+</select>
+
+<script> 
+      $(document).ready(function () {
+          @if (!string.IsNullOrEmpty(Model.ViewName))
+          {
+              <text>
+                  var view = new @(Model.ViewName)();
+                  var dropdown = $('#@Model.Id');
+              </text>
+              
+          }
+          
+          @if (!string.IsNullOrEmpty(Model.OnLoadFunction))
+          {
+              <text>
+                  view.@(Model.OnLoadFunction)();
+              </text>
+          }
+          if (dropdown) {
+              dropdown.on('change', function () {
+                  if (view != undefined) {
+                      @if (!string.IsNullOrEmpty(Model.OnChangeFunction))
+                {
+                    <text>
+                        view.@(Model.OnChangeFunction)();
+                    </text>
+                }
+                
+                  }
+              });
+          }
+          
+      });
+
+ </script>

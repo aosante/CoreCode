@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport CoreCode</title>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <!--<link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+    <!--<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css"/>-->
+    <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    @*<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>*@
+    <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("pageCss", false)
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <!-- Final -->
+</head>
+<body>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @* @Scripts.Render("~/bundles/jquery") *@
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    <script>
+        (function () {
+            var loginComponent = document.getElementById("login");
+            var isUserLoggedIn = sessionStorage.getItem("userToken");
+            if (isUserLoggedIn && loginComponent) {
+                loginComponent.innerText = "Welcome " + "Cesar";
+            } else if (loginComponent) {
+                loginComponent.innerText = "Login";
+            }
+            loginComponent.style.display = 'block';
+        })();
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

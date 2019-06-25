@@ -1,0 +1,55 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+@model CoreCode.Web.UI.Models.ViewComponents.CreateStoreComponent
+
+@section pageCss{
+    <link rel="stylesheet" href="~/Scripts/TableHide.css" />
+}
+
+<script src="~/Scripts/CoreCodeScripts/Common/FormControl.js"></script>
+<script src="~/Scripts/CoreCodeScripts/Stores/CreateStore.js"></script>
+<script>
+    $(document).ready(function() {
+        var storeRegister = new @(Model.ViewName)({
+            formId: "storeRegisterForm"
+        });
+        storeRegister.init();
+    });
+    
+</script>
+
+<div class="main-right-content-container">
+    <form id="storeRegisterForm" class="main-right-content-container">
+        <div style="margin: 0 auto; width: 30%;">
+            <h2>Registrar Tienda</h2>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                @Html.GetInputWithLabel("txtName", "text", "Nombre", "form-control", "Nombre:", "", true)
+            </div>
+            <div class="form-group col-md-6">
+                @Html.GetInputWithLabel("txtPhone", "text", "Telefono", "form-control", "Telefono:", "", true)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.GetInputWithLabel("txtManagerName", "text", "Dirección", "form-control", "Nombre del administrador:", "", true)
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                @Html.GetInputWithLabel("nbmRent", "number", "Costo por uso de puerta:", "form-control", "Costo de renta:", "", true)
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                @Html.GetSelectDropdown("selectCategory", "", "", "", "", new Dictionary<string, string>())
+            </div>
+        </div>
+
+        <div id="btnControl">
+            @Html.GetConfirmButton("btnRegisterStore", "submitForm", Model.ViewName, "{formId: 'storeRegisterForm'}", "Registrar")
+            @Html.GetCancelButton("btnCancel")
+        </div>
+    </form>
+</div>
+
+
+

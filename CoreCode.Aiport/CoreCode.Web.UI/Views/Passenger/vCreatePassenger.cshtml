@@ -1,0 +1,91 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+@{
+    ViewBag.Title = "vCreatePassenger";
+}
+
+<script src="~/Scripts/Views/ControlActions.js"></script>
+<script src="~/Scripts/Views/vCreatePassenger.js"></script>
+@{
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+<form id="frmEdition" class="main-right-content-container">
+    <div style="margin: 0 auto; width: 30%;">
+        <h2>Pasajero</h2>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("txtId", "text", "Cédula*", "form-control", "Ingrese # de identificación", "ID", true)
+        </div>
+
+        <div class="col-md-6">
+            @Html.GetInputWithLabel("txtEmail", "email", "Correo electrónico*", "form-control", "(Obligatorio)", "Email", true)
+
+        </div>
+    </div>
+    <div class="row">
+
+
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("txtFirstName", "text", "Primer nombre*", "form-control", "(Obligatorio)", "FirstName", true)
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("txtLastName", "text", "Primer apellido*", "form-control", "(Obligatorio) ", "LastName", true)
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("txtSecondName", "text", "Segundo nombre", "form-control", "(Opcional)", "SecondName", false)
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("txtSecondLastName", "text", "Segundo apellido", "form-control", "(Opcional)", "SecondLastName", false)
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("txtBirthDate", "date", "Fecha de nacimiento*", "form-control", "Detalle", "BirthDate", true)
+            <label>   *Usuario tiene que ser mayor de edad</label>
+        </div>
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("txtPhone", "tel", "Teléfono*", "form-control", "(Obligatorio)", "Phone", true)
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="selectCivilStatus">Estado civil*</label>
+            <select class="form-control" id="selectCivilStatus" columnDataName="CivilStatus" required>
+                <option value="">Seleccione opción (Obligatorio)</option>
+                <option value="casado">Casado/a</option>
+                <option value="soltero">Soltero/a</option>
+                <option value="union-libre">Unión libre</option>
+            </select>
+            @*@Html.GetSelectDropdown("selectCivilStatus","vCreateAirportAdmin", "",
+                new Dictionary<string, string> { { "Casado",  "casado" }, { "Soltero", "soltero" },{"Otro", "otro" } })*@
+        </div>
+        <div class="form-group col-md-6">
+
+            <label for="selectGenre">Género*</label>
+            <select class="form-control" columnDataName="Genre" id="selectGenre" required>
+                <option value="">Seleccione opción (Obligatorio)</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+            </select>
+            </div>
+    </div>
+</form>
+<form class="main-right-content-container">
+
+    <div id="btnControl">
+
+        @Html.GetConfirmButton("btnRegister", "Create", "vCreatePassenger", "", "Registrar")
+        @Html.GetConfirmButton("btnClean", "CleanForm", "vCreatePassenger", "", "Limpiar")
+    </div>
+
+</form>
+

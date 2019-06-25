@@ -1,0 +1,52 @@
+﻿using CoreCode.DataAccess.Crud;
+using CoreCode.Entities.POJO;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using CoreCode.API.Core.Helpers;
+using CoreCode.API.Core.Managers;
+
+namespace CoreCode.API.Core
+{
+    public class LoginManager : IManager
+    {
+        private readonly LoginCrudFactory crudLoginManager;
+        
+        public LoginManager()
+        {
+            crudLoginManager = new LoginCrudFactory();
+        }
+
+        public List<User> RetrieveAll()
+        {
+            return crudLoginManager.RetrieveAll<User>();
+        }
+
+<<<<<<< HEAD
+        public User RetrieveByUserNameAndPassword(string userName, string password)
+        {
+            var createdUser = new User
+            {
+                Email = userName,
+                Password = EncryptionHelper.GetEncryptedMd5Value(password)
+            };
+            return crudLoginManager.Retrieve<User>(createdUser);
+        }
+
+        public Person RecoverPassword(string username, string password)
+=======
+        public void  RecoverPasswordAdminAirline(User user)
+>>>>>>> 54f40d62a0946640c5c08b9dd714ce79348a3b00
+        {
+            crudLoginManager.UpdatePsswdAdminAirline(user);
+        }
+
+        public void RecoverPasswordAdminAirport(User user)
+        {
+            crudLoginManager.UpdatePsswdAdminAirport(user);
+        }
+    }
+}

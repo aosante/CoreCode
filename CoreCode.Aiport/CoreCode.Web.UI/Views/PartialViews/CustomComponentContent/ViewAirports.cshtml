@@ -1,0 +1,76 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+
+<div id="viewAirportsContainer" style="display: none">
+<section>
+    <section>
+        <div>
+            <h2>
+                Listado general de aeropuertos
+            </h2>
+        </div>
+        <div>
+            <button type="button" id="btnRegisterAirport">Registrar aeropuerto</button>
+        </div>
+        <div>
+            <div>
+                @Html.GetSelectDropdown("statusFilter", "", "", "", "", new Dictionary<string, string> { { "Aeropuertos habilitados", "true" }, { "Aeropuertos deshabilitados", "false" } })
+                @*<select id="statusFilter">
+                        <option selected value="true">Aeropuertos habilitados</option>
+                        <option value="false">Aeropuertos deshabilitados</option>
+                    </select>*@
+            </div>
+            <div>
+                <input type="text" id="txtFilter" placeholder="Buscar por código o nombre:">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <table id="tblAirport">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Código postal</th>
+                    <th>Costo puerta</th>
+                    <th>Costo pista</th>
+                    <th>Impuesto</th>
+                </tr>
+            <tbody></tbody>
+
+        </table>
+        <table id="tblAirport2">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Código postal</th>
+                    <th>Costo puerta</th>
+                    <th>Costo pista</th>
+                    <th>Impuesto</th>
+                </tr>
+            <tbody></tbody>
+
+        </table>
+        <table id="tblAirport3">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Código postal</th>
+                    <th>Impuesto</th>
+                </tr>
+            <tbody></tbody>
+
+        </table>
+    </section>
+</section>
+
+<script src="~/Scripts/CoreCodeScripts/Airports/AirportList.js"></script>
+</div>

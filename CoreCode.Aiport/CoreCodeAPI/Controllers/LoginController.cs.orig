@@ -1,0 +1,97 @@
+﻿using CoreCode.API.Core;
+using CoreCodeAPI.ActionFilter;
+using CoreCode.Entities.POJO;
+using CoreCodeAPI.Models;
+using CoreCodeAPI.Helpers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Http;
+using System.Web.Mvc;
+using RouteAttribute = System.Web.Http.RouteAttribute;
+
+namespace CoreCodeAPI.Controllers
+{
+    [AllowCors]
+    public class LoginController : ApiController
+    {
+        LoginManager mng = new LoginManager();
+        ApiResponse apiResp = new ApiResponse();
+         
+
+        [Route("api/getUsers")]
+        public IHttpActionResult Get()
+        {
+        
+            apiResp.Data = mng.RetrieveAll();
+
+            return Ok(apiResp);
+        }
+
+<<<<<<< HEAD
+        [Route("api/getUser")]
+        public IHttpActionResult GetUser(string userName, string password)
+        {
+            apiResp.Data = mng.RetrieveByUserNameAndPassword(userName, password);
+            return Ok(apiResp);
+        }
+        
+=======
+        [Route("api/recoverPassAirline")]
+        public IHttpActionResult UpdatePassAirlineAdmin(User user)
+        {
+            var mng = new LoginManager();
+
+            mng.RecoverPasswordAdminAirline(user);
+            var CorreoElectronico = user.Email;
+            var pass = user.Password;
+            string Mensaje = "Hola" + user.Name + "  " + user.Last_Name  + " Se ha reiniciado su contraseña <br/><br/> " + pass + " es su nueva contraseña para ingresar";
+            ToolsHelper.SendMail(CorreoElectronico, "Nueva contraseña de ingreso", Mensaje);
+
+            apiResp = new ApiResponse
+            {
+                Message = "Action was executed."
+            };
+
+            return Ok(apiResp);
+        }
+
+        [Route("api/recoverPassAirport")]
+        public IHttpActionResult UpdatePassAirportAdmin(User user)
+        {
+            var mng = new LoginManager();
+
+            mng.RecoverPasswordAdminAirline(user);
+            var CorreoElectronico = user.Email;
+            var pass = user.Password;
+            string Mensaje = "Hola" + user.name + " Se ha reiniciado su contraseña <br/><br/> " + pass + " es su nueva contraseña para ingresar";
+            ToolsHelper.SendMail(CorreoElectronico, "Nueva contraseña de ingreso", Mensaje);
+
+            apiResp = new ApiResponse
+            {
+                Message = "Action was executed."
+            };
+
+            return Ok(apiResp);
+        }
+
+
+        /*  // GET: Login
+          [Route("api/recoverPassword")]
+          //devuelve el JSON
+          public IHttpActionResult RecoverPassword(string mail)
+          {
+              var mng = new LoginManager();
+              var apiResp = new ApiResponse
+              {
+                  Message = "Action was executed.",
+                  Data = mng.GetUser(mail)
+              };
+              //
+              //->
+              return Ok(new { Result = apiResp });
+         } */
+>>>>>>> 54f40d62a0946640c5c08b9dd714ce79348a3b00
+    }
+}

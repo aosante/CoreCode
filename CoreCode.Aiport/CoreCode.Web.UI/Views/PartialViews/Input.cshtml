@@ -1,0 +1,4 @@
+﻿@model CoreCode.Web.UI.Models.HtmlComponents.InputHtmlComponent
+
+<label for="@Model.Id" class="col-form-label col-form-label-sm" id="@Model.IdLabel">@Model.Label</label>
+<input id="@Model.Id" type="@Model.Type" ColumnDataName="@Model.ColumnDataName"  class="form-control-lg @Model.CustomCssClasses" placeholder="@Model.PlaceHolder" aria-label="@Model.Label" aria-describedby="inputGroup-sizing-default" @(Model.Required ? "required" : string.Empty) @(Model.IsDisabled ? "disabled" : string.Empty)>

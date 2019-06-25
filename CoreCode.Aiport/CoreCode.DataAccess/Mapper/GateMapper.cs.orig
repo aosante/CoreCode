@@ -1,0 +1,119 @@
+﻿using CoreCode.DataAccess.Crud;
+using CoreCode.Entities.POJO;
+using DataAccess.Dao;
+using DataAccess.Mapper;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CoreCode.DataAccess.Mapper
+{
+    public class GateMapper : EntityMapper, ISqlStatements, IObjectMapper
+    {
+            private const string DB_COL_GATE_ID = "GATE_ID";
+            private const string DB_COL_ID_AIRPORT = "ID_AIRPORT";
+            private const string DB_COL_STATUS = "STATUS";
+            private const string DB_COL_AIRPORT_ID = "AIRPORT_ID";
+            
+
+            public BaseEntity BuildObject(Dictionary<string, object> row)
+            {
+            AirportCrudFactory acf = new AirportCrudFactory();
+
+            var airport = new Airport
+            {
+                ID = GetStringValue(row, DB_COL_AIRPORT_ID)
+            };
+            Airport airportObj = acf.Retrieve<Airport>(airport);
+
+            var gate = new Gate
+            {
+                IDGate = GetStringValue(row, DB_COL_GATE_ID),
+                Airport = airportObj,
+                Status = Convert.ToBoolean(GetIntValue(row, DB_COL_STATUS))
+              };
+                return gate;
+            }
+
+            public List<BaseEntity> BuildObjects(List<Dictionary<string, object>> lstRows)
+            {
+                var lstResults = new List<BaseEntity>();
+                foreach (var row in lstRows)
+                {
+                    var gate = BuildObject(row);
+                    lstResults.Add(gate);
+                }
+
+                return lstResults;
+            }
+
+            public SqlOperation GetCreateStatement(BaseEntity entity)
+            {
+                var operation = new SqlOperation { ProcedureName = "CRE_GATE_PR" };
+                var c = (Gate)entity;
+                operation.AddVarcharParam(DB_COL_GATE_ID, c.IDGate);
+                operation.AddVarcharParam(DB_COL_ID_AIRPORT, c.Airport.ID);
+                operation.AddIntParam(DB_COL_STATUS, c.Status ? 1 : 0);
+
+
+            return operation;
+            }
+
+            public SqlOperation GetRetrieveAllStatement()
+            {
+                var operation = new SqlOperation { ProcedureName = "RET_ALL_GATES_PR" };
+                return operation;
+            }
+
+            public SqlOperation GetUpdateStatement(BaseEntity entity)
+            {
+                var operation = new SqlOperation { ProcedureName = "UPD_GATE_PR" };
+                var c = (Gate)entity;
+                operation.AddVarcharParam(DB_COL_GATE_ID, c.IDGate);
+                operation.AddVarcharParam(DB_COL_ID_AIRPORT, c.Airport.ID);
+                operation.AddIntParam(DB_COL_STATUS, c.Status ? 1 : 0);
+
+            return operation;
+            }
+
+            public SqlOperation GetDeleteStatement(BaseEntity entity)
+            {
+                var operation = new SqlOperation { ProcedureName = "DEL_GATE_PR" };
+                var c = (Gate)entity;
+                operation.AddVarcharParam(DB_COL_GATE_ID, c.IDGate);
+                return operation;
+            }
+
+            public SqlOperation GetRetrieveStatement(BaseEntity entity)
+            {
+                var operation = new SqlOperation { ProcedureName = "RET_GATE_PR" };
+                var c = (Gate)entity;
+                operation.AddVarcharParam(DB_COL_GATE_ID, c.IDGate);
+                return operation;
+            }
+
+<<<<<<< HEAD
+            public SqlOperation GetGateByAirportId(string airportId)
+            {
+                var operation = new SqlOperation { ProcedureName = "sp_GateByAirportId" };
+                operation.AddVarcharParam(DB_COL_IDAIRPORT, airportId);
+                return operation;
+            }
+    }
+=======
+        public SqlOperation GetRetrieveStatementGatesByAirportId(string idAirport)
+        {
+>>>>>>> 2b9bb4028dddee8a277bd1b9b473fac06792669c
+
+            var operation = new SqlOperation { ProcedureName = "RET_AIRPORT_GATES" };
+            operation.AddVarcharParam(DB_COL_ID_AIRPORT, idAirport);
+            return operation;
+        }
+
+    }
+
+
+}
+

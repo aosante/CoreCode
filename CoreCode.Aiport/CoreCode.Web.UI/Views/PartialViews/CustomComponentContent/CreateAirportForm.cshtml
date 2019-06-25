@@ -1,0 +1,46 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+
+<h2>Registro de aeropuerto</h2>
+<form>
+    <div>
+        <button type="button" id="btnListAirport">Ver aeropuertos</button>
+    </div>
+    <div>
+        <h2>
+            Ingrese los datos del aeropuerto a registrar
+        </h2>
+    </div>
+    @*<div>
+            <input type="text" id="txtId" placeholder="Código:" required>
+        </div>*@
+    <div>
+        @Html.GetInputWithLabel("txtName", "text", "Nombre", "Nombre:")
+        @*<input type="text" id="txtName" placeholder="Nombre:" required>*@
+    </div>
+    <div>
+        @Html.GetInputWithLabel("txtAddress", "text", "Direccion", "Direccion:")
+        @*<input type="text" id="txtAddress" placeholder="Dirección:" required>*@
+    </div>
+    <div>
+        <input type="text" id="txtPhone" placeholder="Teléfono:" required>
+    </div>
+    <div>
+        <input type="text" id="txtZipCode" placeholder="Código postal:" required>
+    </div>
+    <div>
+        <input type="number" id="txtGateTariff" placeholder="Costo por uso de puerta:" required>
+    </div>
+    <div>
+        <input type="number" id="txtRunwayTariff" placeholder="Costo por uso de pista:" required>
+    </div>
+
+    <div>
+        <input type="number" id="txtTax" placeholder="Costo de impuesto:" required>
+    </div>
+
+    <div id="btnControl">
+        @Html.GetConfirmButton("btnRegisterAirport")
+        @*<button type="button" id="btnRegisterAirport">Registrar</button>
+        <button type="button" id="btnCancel">Cancelar</button>*@
+    </div>
+</form>

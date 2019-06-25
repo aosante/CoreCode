@@ -1,0 +1,57 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+
+@{
+    ViewBag.Title = "Registrando aerolinea";
+}
+
+
+<form class="main-right-content-container">
+    <div style="margin: 0 auto; width: 30%;">
+        <h2>Añadir Aerolínea</h2>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="txtComercialName">Nombre Comercial*</label>
+            <input type="text" class="form-control" id="txtComercialName" placeholder="Nombre Comercial..." required>
+            @Html.GetInputWithLabel("txtName", "text", "Nombre:*", "form-control", "Ingrese nombre del aeropuerto", "Name", true)
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="txtBusinessName">Nombre del negocio</label>
+            <input type="text" class="form-control" id="txtBusinessName" placeholder="Nombre del Negocio..." required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="txtCreationYear">Año de Creación</label>
+            <input type="date" class="form-control" id="txtCreationYear" placeholder="Año de creación..." required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="txtDescription">Descripción</label>
+            <input type="text" class="form-control" id="txtDescription" placeholder="Descripción..." required>
+        </div>
+        <div class="col-md-6">
+            <label for="txtEmail">Email*</label>
+            <input type="email" class="form-control" id="txtEmail" placeholder="Email..." required>
+        </div>
+    </div>
+    <div id="btnControl" class="contenedorBoton">
+        <button type="button" id="btnRegisterAirline" class="btn btn-primary register" type="submit">Registrar</button>
+
+    </div>
+</form>
+<form id="formAirline">
+    <label>HOLAAAAAAAAAAAAAAA</label>
+</form>
+
+
+
+
+
+@section scripts{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/ApiService.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/Airlines/AirlineRegister.js"></script>
+}

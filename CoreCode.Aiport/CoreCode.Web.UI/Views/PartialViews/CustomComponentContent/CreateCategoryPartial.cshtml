@@ -1,0 +1,36 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+@model CoreCode.Web.UI.Models.ViewComponents.CreateCategoryComponent
+
+@section pageCss{
+    <link rel="stylesheet" href="~/Scripts/TableHide.css" />
+}
+
+<script src="~/Scripts/CoreCodeScripts/Common/FormControl.js"></script>
+<script src="~/Scripts/CoreCodeScripts/Categories/CategoryRegister.js"></script>
+<script>
+    var categoryRegister = new @(Model.ViewName)({
+        formId: "categoryRegisterForm"
+    });
+    categoryRegister.init();
+</script>
+
+<div class="main-right-content-container">
+    <form id="storeRegisterForm" class="main-right-content-container">
+        <div style="margin: 0 auto; width: 30%;">
+            <h2>Registrar Categoría</h2>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                @Html.GetInputWithLabel("txtDescription", "text", "Descripcion", "form-control", "Descripción:", true)
+            </div>
+        </div>
+
+        <div id="btnControl">
+            @Html.GetConfirmButton("btnRegisterCategory", "submitForm", Model.ViewName, "{formId: 'storeRegisterForm'}", "Registrar")
+            @Html.GetCancelButton("btnCancel")
+        </div>
+    </form>
+</div>
+
+
+

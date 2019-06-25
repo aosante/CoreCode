@@ -1,0 +1,144 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+
+@{
+    ViewBag.Title = "Registrando aerolinea";
+}
+
+<div class="row" style="margin-top: 2em">
+    <div class="col">
+    
+    </div>
+</div>
+
+<div style="width:100%;margin:5em auto" class="tableContainer container">
+    <!-- Button trigger modal -->
+    <button type="button" style="margin-bottom: 20px" class="btn btn-primary" data-toggle="modal" data-target="#addAirlineAdminModal">
+        Add Airline manager
+    </button>
+    <table class="mt-5" id="airlineManager">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Commercial Name</th>
+                <th>Business Name</th>
+                <th>Creation Year</th>
+                <th>Description</th>
+                <th>Email</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<div class="modal fade" id="addAirlineAdminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: rgba(1,1,1,.85)">
+                <h2 class="modal-title" id="modalTitle" style="color: #fff">Add Airline</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" style="font-size: 1.3em; color: #fff">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="max-height: calc(100vh - 200px); overflow-y:auto">
+                <form>
+                    <div class="row">
+                 
+                        <div class="form-group col-md-6">
+                            <label for="txtComercialName">Comercial Name*</label>
+                            <input type="text" class="form-control" id="txtComercialName" placeholder="Comercial Name..." required>                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="txtBusinessName">Business Name</label>
+                            <input type="text" class="form-control" id="txtBusinessName" placeholder="Business Name..." required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtCreationYear">Creation Year*</label>
+                            <input type="date" class="form-control" id="txtCreationYear" placeholder="Creation Year..." required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="txtDescription">Description</label>
+                            <input type="text" class="form-control" id="txtDescription" placeholder="Description..." required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="txtEmail">Email*</label>
+                            <input type="email" class="form-control" id="txtEmail" placeholder="Email..." required>
+                        </div>
+                    </div>
+                
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div id="btnControl" class="contenedorBoton">
+                    <button type="button" id="btnRegisterAirline" class="btn btn-primary register" type="submit">Registrar</button>
+             
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<<<<<<< HEAD
+<!----<div class="mainSection">
+        <h2 class="title">Registro de aerolínea</h2>
+        <div class="container">
+            <form class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col">
+                        <label for="validationCustom01">Codigo </label>
+                        @*@Html.GetInputWithLabel("txtId", "text", "Codigo", string.Empty)*@
+                        <input type="text" class="form-control" id="txtId" placeholder="" required>
+
+                    </div>
+                    <div class="col">
+                        <label for="validationCustom01">Commercial Name</label>
+                        <input type="text" class="form-control" id="txtComercialName" placeholder="" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="validationCustom01">Business Name</label>
+                        <input type="text" class="form-control" id="txtBusinessName" placeholder="" required>
+                    </div>
+                    <div class="col">
+                        <label for="validationCustom01">Creation Year</label>
+                        <input type="datetime" class="form-control" id="txtCreationYear" placeholder="" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="validationCustom01">Description</label>
+                        <input type="text" class="form-control" id="txtDescription" placeholder="" required>
+                    </div>
+                    <div class="col">
+                        <label for="validationCustom01">Email</label>
+                        <input type="email" class="form-control" id="txtEmail" placeholder="" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="validationCustom01">Status</label>
+                    <input type="number" class="form-control" id="txtStatus" placeholder="" required>
+                </div>
+                <div id="btnControl" class="contenedorBoton">
+                    <button type="button" id="btnRegisterAirline" class="btn btn-primary register" type="submit">Registrar</button>
+                    <button type="button" id="btnCancel" class="btn btn-primary cancel" type="submit">Cancelar</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+=======
+>>>>>>> 3512d194edbb2b2e07f23308822f69c32b5ca046
+
+
+
+@section scripts{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/ApiService.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/Airlines/AirlineRegister.js"></script>
+}

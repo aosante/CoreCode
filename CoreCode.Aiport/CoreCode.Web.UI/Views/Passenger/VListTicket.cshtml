@@ -1,0 +1,27 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+
+<script src="~/Scripts/Views/ControlActions.js"></script>
+<script src="~/Scripts/Views/vTicket.js"></script>
+<link rel="stylesheet" href="~/Scripts/TableHide.css" />
+@{
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+@Html.GetSelectDropdown("statusFilter", "vTicket", "TicketStatusDropdownChange", "", "",
+    new Dictionary<string, string> { { "Tiquetes con vuelos a tiempo", "a tiempo" }, { "Tiquetes con vuelos cancelados", "cancelado" }, { "Tiquetes con vuelos retrasados", "retrasado" } })
+
+@Html.GetTable("tblTickets", "vTicket", "BindFields", "", new List<string> { "Id", "Id_Flight", "Ticket_Class", "Status", "Price", "Buy_Date", "Id_Person", "Person_Name" }, new List<string> { "Id", "Número de vuelo", "Clase", "Estado", "Precio", "Fecha de compra", "Cédula comprador", "Nombre del pasajero" })
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VListTicket</title>
+</head>
+<body>
+    <div>
+    </div>
+</body>
+</html>

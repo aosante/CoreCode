@@ -1,0 +1,97 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+
+<script src="~/Scripts/Views/ControlActions.js"></script>
+<script src="~/Scripts/Views/vTicket.js"></script>
+<link rel="stylesheet" href="~/Scripts/TableHide.css" />
+<link rel="stylesheet" href="~/Scripts/Pay.css" />
+<script src="~/Scripts/JavaScript.js"></script>
+@{
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+@Html.ActionLink("Pay Direct With Credit Card", "PaymentWithCreditCard", "Paypal")
+@Html.ActionLink("Pay with Paypal Account", "PaymentWithPaypal", "Paypal")
+
+<input type="submit" value="Create" id="Submit" class="btn btn-default" onclick="location.href='@Url.Action("GetStudents", "CreateStudent11")'" />
+
+@Html.GetSelectDropdown("statusFilter", "vTicket", "TicketStatusDropdownChange", "", "",
+    new Dictionary<string, string> { { "Tiquetes con vuelos a tiempo", "a tiempo" }, { "Tiquetes con vuelos cancelados", "cancelado" }, { "Tiquetes con vuelos retrasados", "retrasado" } })
+
+@Html.GetTable("tblTickets", "vTicket", "BindFields", "", new List<string> { "Id", "Id_Flight", "Ticket_Class", "Status", "Price", "Buy_Date", "Id_Person", "Person_Name" }, new List<string> { "Id", "Número de vuelo", "Clase", "Estado", "Precio", "Fecha de compra", "Cédula comprador", "Nombre del pasajero" })
+
+<div class="card border-secondary" style="margin-top: 50px;">
+    <div class="card-header">
+        <div class="row pull-right">
+            <div class="col-md-8">Informacion de vuelo</div>
+            <div class="col-md-4">
+                @Html.GetConfirmButton("btnRegisterTicket", "Create", "vTicket", "", "Registrar")
+                @Html.GetConfirmButton("btnEditTicket", "Update", "vTicket", "", "Modificar")
+                @Html.GetConfirmButton("btnClean", "CleanForm", "vTicket", "", "Limpiar")
+
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bs-component">
+                    <form action="/Payment/Charge" method="POST">
+                        <article>
+                            <label>Amount: $5.00</label>
+                        </article>
+                        <script src="//checkout.stripe.com/v2/checkout.js"
+                                class="stripe-button"
+                                data-key="pk_test_h3sCi8Oi9viC0eC8G5usRrtA00cFLs48IU"
+                                data-locale="auto"
+                                data-description="Sample Charge"
+                                data-amount="500">
+                        </script>
+                    </form>
+
+                    <script src="https://js.stripe.com/v3/"></script>
+
+                    <form action="/charge" method="post" id="payment-form">
+                        <div class="form-row">
+                            <label for="card-element">
+                                Credit or debit card
+                            </label>
+                            <div id="card-element">
+                                <!-- A Stripe Element will be inserted here. -->
+                            </div>
+
+                            <!-- Used to display form errors. -->
+                            <div id="card-errors" role="alert"></div>
+                        </div>
+
+                        <button>Submit Payment</button>
+                    </form>
+                    <form id="frmEdition">
+                        @Html.GetInputWithLabel("txtId", "text", "Código de reserva", "", "Código de reserva: ", "Id", true)
+                        @Html.GetInputWithLabel("txtId_Flight", "text", "Código de vuelo", "", "Código de vuelo ", "Id_Flight", true)
+                        @*  @Html.GetInputWithLabel("txtTicket_Class", "text", "", "", "seleccione la Clase ", "Ticket_Class", true) *@
+                        @Html.GetInputWithLabel("txtStatus", "text", "Estado", "", "Estatus: ", "Status", true)
+                        @Html.GetInputWithLabel("txtPrice", "text", "Precio", "", "Costo en dólares ", "Price", true)
+                        @Html.GetInputWithLabel("txtBuy_Date", "datetime-local", "Fecha de compra", "", "Fecha de compra ", "Buy_Date", false)
+                        @* @Html.GetInputWithLabel("txtStatus", "text", "", "", "Ingrese el status: ", "Description", true) *@
+                        @Html.GetInputWithLabel("txtId_Person", "text", "Id del comprador", "", "Id del comprador ", "Id_Person", true)
+                        @Html.GetInputWithLabel("txtPerson_Name", "text", "Nombre del pasajero", "", "Nombre del pasajero", "Person_Name", true)
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="selectCivilStatus">Seleccione la clase</label>
+                                <select class="form-control" id="Ticket_Class" columnDataName="Class" required>
+                                    <option value="">Seleccione opción (Obligatorio)</option>
+                                    <option value="primera">Ejecutiva</option>
+                                    <option value="segunda">Turista</option>
+                                </select>
+                                @*@Html.GetSelectDropdown("selectCivilStatus","vCreateAirportAdmin", "",
+                    new Dictionary<string, string> { { "Casado",  "casado" }, { "Soltero", "soltero" },{"Otro", "otro" } })*@
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

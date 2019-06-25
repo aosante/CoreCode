@@ -1,0 +1,8 @@
+﻿.heroHomePage {
+    background-image: url('../../Content/Images/ImageTest.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    padding-top: 70px;
+}

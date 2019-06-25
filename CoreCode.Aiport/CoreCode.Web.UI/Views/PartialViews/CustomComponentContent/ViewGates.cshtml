@@ -1,0 +1,57 @@
+﻿
+@using CoreCode.Web.UI.Models.Helpers@{
+                                         ViewBag.Title = "Puertas registradas";
+                                     }
+<div id="view-gates-container">
+    <section>
+        <section>
+            <div>
+                <h2>
+                    Listado general de puertas
+                </h2>
+            </div>
+            <div>
+                <div id="btnControl">
+                    <button type="button" id="btnRegisterGate">Registrar puerta</button>
+                </div>
+                <div>
+                    @Html.GetSelectDropdown("statusFilter", "", "", "", "", new Dictionary<string, string> { { "Puertas habilitadas", "true" }, { "Puertas deshabilitadas", "false" } })
+                    @*<select id="statusFilter">
+                            <option selected value="true">Puertas habilitadas</option>
+                            <option value="false">Puertas deshabilitadas</option>
+                        </select>*@
+
+                </div>
+                <div>
+                    <select id="selectAirport"></select>
+                </div>
+                <div>
+                </div>
+                <div>
+                    <input type="text" id="txtFilter" placeholder="Buscar por código:">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <table id="tblGate">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Configuracion</th>
+                    </tr>
+                <tbody></tbody>
+            </table>
+            <table id="tblGate2">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Configuracion</th>
+                    </tr>
+                <tbody></tbody>
+
+            </table>
+        </section>
+    </section>
+    <script src="~/Scripts/CoreCodeScripts/Gates/GateList.js"></script>
+</div>

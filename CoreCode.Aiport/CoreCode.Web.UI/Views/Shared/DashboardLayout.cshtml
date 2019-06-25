@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport CoreCode</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+    
+    @RenderSection("pageCss", false)
+    <link href="~/Content/Dashboard.css" rel="stylesheet" />
+    <link href="~/Content/GeneralCss.css" rel="stylesheet" />
+    <style>
+
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif
+        }
+
+        /*Store Card*/
+        .store-card-header {
+            background-color: #5D5D5D;
+            color: white;
+        }
+
+        .store-card {
+            border: 1px solid #8B8B8B;
+        }
+        /*End Store Cards*/
+        .scoreImage {
+            width: 100%;
+        }
+
+        #scoreCard-template {
+            display: none;
+        }
+
+        .scoreTitle {
+            font-weight: bold;
+        }
+
+        .scoreCard {
+            border: 1px solid black;
+            width: 20%;
+        }
+
+        .skeleton-triple {
+            float: left;
+            margin: 20px 6%;
+        }
+
+        .skeleton-middle {
+            margin: 0 auto;
+            width: 30%;
+        }
+
+        .skeleton-single-line {
+            width: 75%;
+            margin: 20px auto;
+        }
+    </style>
+
+    @RenderSection("headerScripts", false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/CoreCodeScripts/ApiService.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/DomHelper.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/DashboardSideNavigation.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/ModalService.js"></script>
+    <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/userSession.js"></script>
+    </head>
+<body>
+    <div class="dashboard-container grid">
+        <header class="header">
+            <div class="header__search"></div>
+            <button class="btn btn-primary" id="log-out-btn" style="cursor: pointer; display: none;">Log Out</button>
+        </header>
+        @{Html.RenderAction("DashboardAsideNavigation", "Dashboard");}
+        <main id="main-dashboard-right-container" class="main">
+            <div class="currentShownSlide">
+                @RenderBody()
+            </div>
+            <div id="loading-skeleton" style="display: none">
+                <div class="skeleton" style="width: 100%;margin: 17px 5px;"></div>
+                <div class="skeleton skeleton-triple " style="width: 20%;float: left;height: 110px;"></div>
+                <div class="skeleton skeleton-triple " style="width: 20%;float: left;height: 110px;"></div>
+                <div class="skeleton skeleton-triple " style="width: 20%;height: 110px;float: left;"></div>
+                <div class="skeleton skeleton-single-line"></div>
+                <div class="skeleton skeleton-single-line"></div>
+                <div class="skeleton skeleton-middle" style="height: 300px;"></div>
+                @*<div class="skeleton" style="width: 30%"></div>
+            <div class="skeleton" style="width: 40%"></div>*@
+            </div>
+        </main>
+        @*<footer>
+            Footer elements
+        </footer>*@
+    </div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYUM8j-5vLVTwmJMzsFuzcwYWg4M-ZjH4"></script>
+
+@RenderSection("scripts", required: false)
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+<script src="~/Scripts/Views/ControlActions.js"></script>
+<script src="~/Scripts/Views/EditProfile.js"></script>
+
+<form id="frmEdition" class="main-right-content-container">
+    <div style="margin: 0 auto; width: 30%;">
+        <h2>Mi perfil</h2>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("inputUserId", "text", "Cédula:", "form-control", "Ingrese # de identificación", "ID", true, true)
+        </div>
+
+        <div class="col-md-6">
+            @Html.GetInputWithLabel("inputUserEmail", "email", "Correo electrónico:", "form-control", "", "Email", true)
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("inputFirstName", "text", "Primer nombre:", "form-control", "", "FirstName", true)
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("inputFirstLastName", "text", "Primer apellido*", "form-control", "", "LastName", true)
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("inputSecondName", "text", "Segundo nombre", "form-control", "-", "SecondName", false)
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("inputSecondLastName", "text", "Segundo apellido", "form-control", "-", "SecondLastName", false)
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("inputBirthDate", "date", "Fecha de nacimiento:", "form-control", "Detalle", "BirthDate", true)
+            <label>   *Usuario tiene que ser mayor de edad</label>
+        </div>
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("inputPhone", "tel", "Teléfono*", "form-control", "", "Phone", true)
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="selectCivilStatus">Estado civil*</label>
+            @Html.GetSelectDropdown("selectCivilStatus", "EditProfile", "", "", "", new Dictionary<string, string>()
+            {
+                {"Seleccione una opción", ""},
+                {"Casado/a", "casado"},
+                {"Soltero/a", "soltero"},
+                {"Unión libre", "union-libre"},
+            })
+
+        </div>
+        <div class="form-group col-md-6">
+
+            <label for="selectGenre">Género*</label>
+            @Html.GetSelectDropdown("selectGenre", "EditProfile", "", "", "", new Dictionary<string, string>()
+            {
+                {"Seleccione una opción", ""},
+                {"Masculino", "masculino"},
+                {"Femenino", "femenino"},
+                {"Otro", "otro"},
+            })
+
+        </div>
+    </div>
+    @Html.GenericButton("savechanges", "disabled", "Guardar", "", "black")
+</form>
+

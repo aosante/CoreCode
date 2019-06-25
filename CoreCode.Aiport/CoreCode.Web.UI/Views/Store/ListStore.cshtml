@@ -1,0 +1,160 @@
+﻿
+@using CoreCode.Web.UI.Models.Helpers
+
+@{
+    /**/
+
+    ViewBag.Title = "Tiendas registradas";
+}
+
+@section pageCss{
+    <link rel="stylesheet" href="~/Scripts/TableHide.css" />
+}
+<div class="main-right-content-container">
+    <section>
+        <div>
+            <h2>
+                Listado general de tiendas
+            </h2>
+        </div>
+        <div>
+            @*<div id="btnControl">
+                <button type="button" id="btnRegisterStore">Registrar tienda</button>
+            </div>*@
+            <div>
+                @Html.GetSelectDropdown("statusFilter", "", "", "", "", new Dictionary<string, string> { { "Tiendas habilitadas", "true" }, { "Tiendas deshabilitadas", "false" } })
+                @*<select id="statusFilter">
+                        <option selected value="true">Tiendas habilitadas</option>
+                        <option value="false">Tiendas deshabilitadas</option>
+                    </select>*@
+
+            </div>
+            <div>
+                <select id="selectAirport"></select>
+            </div>
+            <div>
+            </div>
+            <div>
+                <input type="text" id="txtFilter" placeholder="Buscar por código o nombre:">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <table id="tblStore">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Administrador</th>
+                    <th>Teléfono</th>
+                    <th>Costo renta</th>
+                    <th>Configuracion</th>
+                </tr>
+            <tbody></tbody>
+        </table>
+        <table id="tblStore2">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Administrador</th>
+                    <th>Teléfono</th>
+                    <th>Costo renta</th>
+                    <th>Configuracion</th>
+                </tr>
+            <tbody></tbody>
+
+        </table>
+        <table id="tblStore3">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Administrador</th>
+                    <th>Teléfono</th>
+                </tr>
+            <tbody></tbody>
+
+        </table>
+    </section>
+</div>
+
+<div class="modal fade" id="editStoreModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header" style="background-color: rgba(1,1,1,.85)">
+                <h2 class="modal-title" id="modalTitle" style="color: #fff">Modifcar tienda</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" style="font-size: 1.3em; color: #fff">&times;</span>
+                </button>
+
+
+            </div>
+            <div class="modal-body" style="max-height: calc(100vh - 200px); overflow-y:auto">
+
+
+
+                <form>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="txtNameEdit">Nombre*</label>
+                            <input type="text" class="form-control register register" id="txtNameEdit" placeholder="Nombre tienda: " required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="txtManagerNameEdit">Administrador*</label>
+                            <input type="text" class="form-control register register" id="txtManagerNameEdit" placeholder="Nombre administrador: " required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="txtPhoneEdit">Teléfono*</label>
+                            <input type="text" class="form-control register register" id="txtPhoneEdit" placeholder="Teléfono tienda: " required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="nbmRentEdit">Renta*</label>
+                            <input type="text" class="form-control register register" id="nbmRentEdit" placeholder="Alquiler mensual: " required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="selectAirportEdit">Aeropuerto*</label>
+                            <select class="form-control register register" id="selectAirportEdit">
+                                @*<option value="">Seleccione aeropuerto</option>*@
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="selectCategoryEdit">Categoría*</label>
+                            <select class="form-control register register" id="selectCategoryEdit">
+                                @*<option value="">Seleccione categoría</option>*@
+                            </select>
+                        </div>
+
+                    </div>
+
+
+
+                </form>
+
+
+            </div>
+            <div class="modal-footer">
+                <button id="btnEditStore" type="submit" class="btn btn-primary">Guardar cambios</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section scripts{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/ApiService.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/Stores/StoreList.js"></script>
+
+}

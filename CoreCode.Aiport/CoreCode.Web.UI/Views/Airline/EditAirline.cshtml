@@ -1,0 +1,60 @@
+﻿@using CoreCode.Web.UI.Models.Helpers
+<div id="editAirlineContainer" style="display: none;">Edit Airline</div>
+
+
+@{
+    ViewBag.Title = "Modificar aerolinea";
+}
+
+@section pageCss{
+    <link rel="stylesheet" href="~/Scripts/TableHide.css" />
+}
+
+<form class="main-right-content-container">
+    <div style="margin: 0 auto; width: 40%;">
+        <h2>Información de Aerolínea</h2>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("txtComercialName", "text", "Nombre Comercial", "form-control", "Nombre Comercial:", true)
+        </div>
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("txtBusinessName", "text", "Nombre de negocio", "form-control", "Nombre de negocio:", true)
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("txtCreationYear", "date", "Año de creación", "form-control", "Año de creación:", true)
+        </div>
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("txtDescription", "text", "Description", "form-control", "Description:", true)
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.GetInputWithLabel("txtEmail", "text", "Email", "form-control", "Email:", true)
+        </div>
+    </div>
+
+    <div>
+        <button type="button" id="btnListAirline">Ver aerolineas</button>
+    </div>
+    
+    <div id="btnControl">
+        @Html.GetConfirmButton("btnEditAirline", "Modificar")
+        @Html.GetCancelButton("btnCancel")
+        @*<button type="button" id="btnEditAirline">Modificar</button>
+        <button type="button" id="btnCancel">Cancelar</button>*@
+    </div>
+
+</form>
+
+
+
+
+@section scripts{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/ApiService.js"></script>
+    <script src="~/Scripts/CoreCodeScripts/Airlines/AirlineEdit.js"></script>
+
+}
